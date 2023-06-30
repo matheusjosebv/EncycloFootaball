@@ -1,0 +1,175 @@
+@import "../../styles/shared.scss";
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: $black;
+
+  @include media-tablet {
+    padding: 20px 30px;
+  }
+
+  @include media-desktopSm {
+    padding: 20px 50px;
+  }
+
+  .left {
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        background: $red;
+        border-radius: 50%;
+        padding: 7px;
+        color: $black;
+        transition: 0.2s background;
+      }
+
+      .football {
+        width: 40px;
+        height: 40px;
+        color: $red;
+        transition: 0.2s color;
+
+        @include media-tablet {
+          width: 44px;
+          height: 44px;
+        }
+      }
+
+      @include media-tablet {
+        font-size: 19px;
+      }
+
+      &:hover {
+        .text {
+          background: $dark-red;
+        }
+
+        .football {
+          color: $dark-red;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    .routes {
+      display: none;
+      gap: 25px;
+
+      @include media-tablet {
+        display: flex;
+      }
+
+      .route {
+        color: $red;
+        font-size: 13px;
+
+        cursor: pointer;
+        transition: 0.2s color;
+        text-transform: uppercase;
+
+        @include media-desktopSm {
+          font-size: 15px;
+        }
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+    .search {
+      margin: 0 0 0 25px;
+      color: $red;
+      display: none;
+      align-items: center;
+      gap: 5px;
+
+      @include media-tablet {
+        display: flex;
+        cursor: pointer;
+      }
+
+      @include media-desktopSm {
+        margin: 0 0 0 50px;
+        cursor: unset;
+      }
+
+      .input {
+        display: none;
+        background: transparent;
+        outline: none;
+        border: 1px solid rgba($red, 0.4);
+        border-radius: 10px;
+        padding: 5px 7px;
+        color: $red;
+
+        &::placeholder {
+          color: rgb($red, 0.5);
+        }
+
+        @include media-desktopSm {
+          display: flex;
+        }
+      }
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        transition: 0.2s color;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+    .mobileMenu {
+      display: flex;
+
+      @include media-tablet {
+        display: none;
+      }
+
+      .icon {
+        color: $red;
+        width: 20px;
+        height: 20px;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        .icon {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .borderBottom {
+    position: absolute;
+    width: 100vw;
+    background: rgb(197, 197, 197, 0.4);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+  }
+}

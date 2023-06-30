@@ -1,7 +1,23 @@
+// import ScrollToTop from "../../hooks/ScrollToTop";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+
+import Navbar from "./containers/Navbar/Navbar";
+import Footer from "./containers/Footer/Footer";
+import PageHome from "./pages/PageHome/PageHome";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <BrowserRouter>
+        {/* <ScrollToTop /> */}
+        <Navbar />
+        <Routes>
+          <Route index element={<PageHome />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }

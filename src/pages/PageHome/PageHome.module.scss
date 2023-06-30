@@ -1,0 +1,72 @@
+@import "../../styles/shared.scss";
+
+.root {
+  .hero {
+    position: relative;
+    min-height: 100vh;
+
+    .img {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .text {
+      position: absolute;
+      z-index: 1;
+      right: 50px;
+      bottom: 30vh;
+
+      .title {
+      }
+
+      .content {
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      z-index: 0;
+
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 50vh;
+      background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #000 calc(100% - 2.5rem));
+
+      .gradient {
+      }
+
+      .scrollDown {
+      }
+    }
+  }
+
+  .about {
+    height: 100vh;
+    width: 100vw;
+    background: $black;
+  }
+
+  .worldCupHistory {
+    height: 100vh;
+    width: 100vw;
+    background: $white;
+  }
+
+  .squadBuilder {
+    height: 100vh;
+    width: 100vw;
+    background: $red;
+  }
+
+  .statistics {
+    height: 100vh;
+    width: 100vw;
+    background: $blue;
+  }
+}
