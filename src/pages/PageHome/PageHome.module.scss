@@ -1,71 +1,67 @@
 @import "../../styles/shared.scss";
 
 .root {
-  .hero {
-    position: relative;
-    min-height: 100vh;
-
-    .img {
-      position: absolute;
-
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
-
-    .text {
-      position: absolute;
-      z-index: 1;
-      right: 50px;
-      bottom: 30vh;
-
-      .title {
-      }
-
-      .content {
-      }
-    }
-
-    .bottom {
-      position: absolute;
-      z-index: 0;
-
-      left: 0;
-      bottom: 0;
-      width: 100vw;
-      height: 50vh;
-      background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #000 calc(100% - 2.5rem));
-
-      .gradient {
-      }
-
-      .scrollDown {
-      }
-    }
-  }
-
   .about {
     height: 100vh;
     width: 100vw;
     background: $black;
+
+    .container {
+      margin: 50px 0 0;
+      padding: 0 25px;
+
+      @include media-tabletSm {
+        margin: 100px 0 0;
+        padding: 0 35px;
+      }
+
+      @include media-desktopSm {
+        margin: 150px 0 0;
+        padding: 0 50px;
+      }
+
+      @include media-desktopSm {
+        display: flex;
+        gap: 50px;
+      }
+
+      .textHeading {
+        @include media-desktopSm {
+          width: 50%;
+        }
+      }
+
+      > .img {
+        width: 90%;
+        height: 100vw;
+        margin: 50px 25px 0;
+
+        max-width: 400px;
+        max-height: 500px;
+
+        @include media-desktopSm {
+          width: 50%;
+          margin: 0;
+          height: 450px;
+        }
+      }
+    }
   }
 
   .worldCupHistory {
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
     background: $white;
   }
 
   .squadBuilder {
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
     background: $red;
   }
 
   .statistics {
-    height: 100vh;
+    // height: 100vh;
     width: 100vw;
     background: $blue;
   }

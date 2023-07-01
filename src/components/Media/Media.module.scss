@@ -1,0 +1,60 @@
+@import "../../styles/shared.scss";
+
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-area: media;
+  opacity: 0;
+
+  &.animate {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .videoWrapper {
+    position: relative;
+
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
+
+    .controls {
+      width: 100%;
+      height: 30%;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      background: linear-gradient(180deg, rgba(18, 18, 20, 0), rgba(18, 18, 20, 0.7));
+
+      button {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+  }
+
+  .imgWrapper {
+    overflow: hidden;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 110%;
+      pointer-events: none;
+      transform: translate3d(0px, -15%, 0px);
+    }
+  }
+}

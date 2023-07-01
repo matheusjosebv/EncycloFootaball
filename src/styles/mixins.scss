@@ -1,5 +1,11 @@
-@mixin media-tablet {
-  @media (min-width: #{$breakpoint-tablet}) {
+@mixin media-tabletSm {
+  @media (min-width: #{$breakpoint-tabletSm}) {
+    @content;
+  }
+}
+
+@mixin media-tabletLg {
+  @media (min-width: #{$breakpoint-tabletLg}) {
     @content;
   }
 }

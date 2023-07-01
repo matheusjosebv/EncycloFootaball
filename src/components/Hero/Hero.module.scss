@@ -1,0 +1,114 @@
+@import "../../styles/shared.scss";
+
+.root {
+  position: relative;
+  min-height: 100vh;
+
+  .img {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    user-select: none;
+
+    opacity: 0;
+    transform: scale(1.35);
+  }
+
+  .navbarGradient {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 220px;
+    background: linear-gradient(180deg, hsla(0, 0%, 10%, 0.75), hsla(0, 0%, 32%, 0));
+  }
+
+  .text {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    bottom: 20vh;
+
+    @include media-tabletSm {
+      bottom: 18vh;
+      right: 50px;
+    }
+
+    @include media-desktopSm {
+      bottom: 16vh;
+      right: 75px;
+    }
+
+    .title {
+      font-size: 30px;
+
+      opacity: 0;
+      transform: translateY(30%);
+
+      @include media-tabletSm {
+        font-size: 35px;
+      }
+
+      @include media-desktopSm {
+        font-size: 40px;
+      }
+    }
+
+    .content {
+      font-size: 15px;
+      margin: 10px 0 0;
+
+      opacity: 0;
+      transform: translateY(30%);
+
+      @include media-tabletSm {
+        font-size: 16px;
+      }
+
+      @include media-desktopSm {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    z-index: 0;
+
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 50vh;
+
+    .gradient {
+      position: relative;
+      height: 110%;
+      background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), #000 calc(100% - 2.5rem));
+
+      .scrollDown {
+        position: absolute;
+
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        opacity: 0;
+
+        .icon {
+          width: 18px;
+          height: 18px;
+          color: $white;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

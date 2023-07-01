@@ -4,29 +4,51 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 10;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: $black;
 
-  @include media-tablet {
-    padding: 20px 30px;
+  transform: translateY(-100%);
+  transition: 0.7s background;
+
+  @include media-tabletSm {
+    padding: 15px 30px;
+  }
+
+  @include media-tabletLg {
+    padding: 15px 50px;
   }
 
   @include media-desktopSm {
-    padding: 20px 50px;
+    padding: 18px 55px;
+  }
+
+  @include media-desktopMd {
+    padding: 20px 80px;
+  }
+
+  &.navbarBg {
+    background: rgb($black, 0.875);
+  }
+
+  &.sidebar {
+    background: rgb($black, 1);
   }
 
   .left {
+    opacity: 0;
+
     .logo {
       display: flex;
       align-items: center;
       font-size: 17px;
-      text-transform: uppercase;
+
       cursor: pointer;
+      user-select: none;
+      text-transform: uppercase;
 
       .text {
         display: flex;
@@ -44,13 +66,13 @@
         color: $red;
         transition: 0.2s color;
 
-        @include media-tablet {
+        @include media-tabletSm {
           width: 44px;
           height: 44px;
         }
       }
 
-      @include media-tablet {
+      @include media-tabletSm {
         font-size: 19px;
       }
 
@@ -72,19 +94,24 @@
 
     .routes {
       display: none;
-      gap: 25px;
+      gap: 20px;
 
-      @include media-tablet {
+      @include media-tabletSm {
         display: flex;
+      }
+
+      @include media-desktopSm {
+        gap: 30px;
       }
 
       .route {
         color: $red;
         font-size: 13px;
-
         cursor: pointer;
         transition: 0.2s color;
         text-transform: uppercase;
+
+        opacity: 0;
 
         @include media-desktopSm {
           font-size: 15px;
@@ -97,36 +124,43 @@
     }
 
     .search {
-      margin: 0 0 0 25px;
-      color: $red;
       display: none;
       align-items: center;
       gap: 5px;
+      color: $red;
+      margin: 0 0 0 25px;
 
-      @include media-tablet {
+      @include media-tabletSm {
         display: flex;
         cursor: pointer;
       }
 
+      @include media-tabletLg {
+        margin: 0 0 0 35px;
+      }
+
       @include media-desktopSm {
-        margin: 0 0 0 50px;
+        margin: 0 0 0 65px;
+
         cursor: unset;
       }
 
       .input {
         display: none;
-        background: transparent;
-        outline: none;
-        border: 1px solid rgba($red, 0.4);
-        border-radius: 10px;
         padding: 5px 7px;
+        border-radius: 10px;
+        background: transparent;
+        border: 1px solid rgba($red, 1);
+        outline: none;
         color: $red;
 
+        opacity: 0;
+
         &::placeholder {
-          color: rgb($red, 0.5);
+          color: rgb($dark-red, 1);
         }
 
-        @include media-desktopSm {
+        @include media-tabletLg {
           display: flex;
         }
       }
@@ -136,6 +170,8 @@
         height: 20px;
         transition: 0.2s color;
 
+        opacity: 0;
+
         &:hover {
           color: $white;
         }
@@ -144,8 +180,11 @@
 
     .mobileMenu {
       display: flex;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
 
-      @include media-tablet {
+      @include media-tabletSm {
         display: none;
       }
 
@@ -153,7 +192,6 @@
         color: $red;
         width: 20px;
         height: 20px;
-        transition: 0.2s;
       }
 
       &:hover {
@@ -166,10 +204,11 @@
 
   .borderBottom {
     position: absolute;
-    width: 100vw;
-    background: rgb(197, 197, 197, 0.4);
-    height: 1px;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100vw;
+
+    background: rgb(197, 197, 197, 0.4);
   }
 }
