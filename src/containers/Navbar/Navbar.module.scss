@@ -6,209 +6,640 @@
   left: 0;
   z-index: 10;
   width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
 
   transform: translateY(-100%);
   transition: 0.7s background;
 
-  @include media-tabletSm {
-    padding: 15px 30px;
-  }
-
-  @include media-tabletLg {
-    padding: 15px 50px;
-  }
-
-  @include media-desktopSm {
-    padding: 18px 55px;
-  }
-
-  @include media-desktopMd {
-    padding: 20px 80px;
-  }
-
   &.navbarBg {
-    background: rgb($black, 0.875);
+    background: rgb($black, 0.8);
+
+    @include media-desktopSm {
+      background: rgb($black, 0);
+    }
   }
 
   &.sidebar {
     background: rgb($black, 1);
   }
 
-  .left {
-    opacity: 0;
+  .navbar {
+    position: relative;
 
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
 
-      cursor: pointer;
-      user-select: none;
-      text-transform: uppercase;
+    @include media-tabletSm {
+      padding: 15px 30px;
+    }
 
-      .text {
-        display: flex;
-        flex-direction: column;
-        background: $red;
-        border-radius: 50%;
-        padding: 7px;
-        color: $black;
-        transition: 0.2s background;
+    @include media-tabletLg {
+      padding: 15px 50px;
+    }
+
+    @include media-desktopSm {
+      padding: 18px 55px;
+    }
+
+    @include media-desktopMd {
+      padding: 20px 80px;
+    }
+
+    .gradient {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 167px;
+
+      content: "";
+      pointer-events: none;
+
+      opacity: 0;
+      transition: transform 0.4s ease-in-out, opacity 0.4s linear;
+      background: linear-gradient(180deg, #000 calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+      display: none;
+
+      @include media-desktopSm {
+        display: block;
       }
 
-      .football {
-        width: 40px;
-        height: 40px;
-        color: $red;
-        transition: 0.2s color;
+      &.activeGradient {
+        opacity: 0.85;
+      }
 
-        @include media-tabletSm {
-          width: 44px;
-          height: 44px;
+      &.hideGradient {
+        @include media-tabletLg {
+          transform: translate(0px, -52px);
         }
       }
+    }
 
-      @include media-tabletSm {
-        font-size: 19px;
-      }
+    .left {
+      opacity: 0;
 
-      &:hover {
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+
+        cursor: pointer;
+        user-select: none;
+        text-transform: uppercase;
+
         .text {
-          background: $dark-red;
+          display: flex;
+          flex-direction: column;
+          background: $red;
+          border-radius: 50%;
+          padding: 7px;
+          color: $black;
+          transition: 0.2s background;
         }
 
         .football {
-          color: $dark-red;
+          width: 40px;
+          height: 40px;
+          color: $red;
+          transition: 0.2s color;
+
+          @include media-tabletSm {
+            width: 44px;
+            height: 44px;
+          }
         }
-      }
-    }
-  }
 
-  .right {
-    display: flex;
-    align-items: center;
-
-    .routes {
-      display: none;
-      gap: 20px;
-
-      @include media-tabletSm {
-        display: flex;
-      }
-
-      @include media-desktopSm {
-        gap: 30px;
-      }
-
-      .route {
-        color: $red;
-        font-size: 13px;
-        cursor: pointer;
-        transition: 0.2s color;
-        text-transform: uppercase;
-
-        opacity: 0;
-
-        @include media-desktopSm {
-          font-size: 15px;
+        @include media-tabletSm {
+          font-size: 19px;
         }
 
         &:hover {
-          color: $white;
+          .text {
+            background: rgb($red, 0.7);
+          }
+
+          .football {
+            color: rgb($red, 0.7);
+          }
         }
       }
     }
 
-    .search {
-      display: none;
+    .right {
+      display: flex;
       align-items: center;
-      gap: 5px;
-      color: $red;
-      margin: 0 0 0 25px;
 
-      @include media-tabletSm {
-        display: flex;
-        cursor: pointer;
-      }
-
-      @include media-tabletLg {
-        margin: 0 0 0 35px;
-      }
-
-      @include media-desktopSm {
-        margin: 0 0 0 65px;
-
-        cursor: unset;
-      }
-
-      .input {
+      .routes {
         display: none;
-        padding: 5px 7px;
-        border-radius: 10px;
-        background: transparent;
-        border: 1px solid rgba($red, 1);
-        outline: none;
+        gap: 20px;
+
+        @include media-tabletSm {
+          display: flex;
+        }
+
+        @include media-desktopSm {
+          gap: 30px;
+        }
+
+        .route {
+          color: $red;
+          font-size: 13px;
+          cursor: pointer;
+          transition: 0.2s color;
+          text-transform: uppercase;
+
+          opacity: 0;
+
+          @include media-desktopSm {
+            font-size: 15px;
+          }
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+
+      .search {
+        display: none;
+        align-items: center;
+        gap: 5px;
         color: $red;
+        margin: 0 0 0 25px;
 
-        opacity: 0;
+        &:hover {
+          color: $white;
 
-        &::placeholder {
-          color: rgb($dark-red, 1);
+          .input {
+            color: $white;
+            border: 1px solid $white;
+
+            &::placeholder {
+              color: rgb($white, 0.75);
+            }
+          }
+        }
+
+        @include media-tabletSm {
+          display: flex;
+          cursor: pointer;
         }
 
         @include media-tabletLg {
-          display: flex;
+          margin: 0 0 0 35px;
+        }
+
+        @include media-desktopSm {
+          margin: 0 0 0 65px;
+
+          cursor: unset;
+        }
+
+        .input {
+          display: none;
+          padding: 5px 7px;
+          border-radius: 10px;
+          background: transparent;
+          border: 1px solid $red;
+          outline: none;
+          color: $red;
+
+          opacity: 0;
+          transition: 0.2s color, 0.2s border;
+
+          &::placeholder {
+            color: rgb($dark-red, 1);
+            transition: 0.2s color;
+          }
+
+          @include media-tabletLg {
+            display: flex;
+          }
+        }
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          transition: 0.2s color;
+
+          opacity: 0;
         }
       }
 
-      .icon {
-        width: 20px;
-        height: 20px;
-        transition: 0.2s color;
+      .mobileMenu {
+        display: flex;
+        z-index: 10;
+        cursor: pointer;
 
         opacity: 0;
+
+        @include media-tabletSm {
+          display: none;
+        }
+
+        .icon {
+          color: $red;
+          width: 20px;
+          height: 20px;
+          transition: 0.2s color;
+        }
+
+        &:hover {
+          .icon {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .borderBottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100vw;
+
+      background: rgb(197, 197, 197, 0.4);
+      transition: 0.5s opacity;
+
+      &.hideBorder {
+        @include media-desktopSm {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .subnav {
+    display: none;
+    align-items: center;
+    padding: 5px 55px;
+    transform-origin: 0 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+
+    @include media-desktopSm {
+      display: flex;
+    }
+
+    @include media-desktopMd {
+      padding: 5px 80px;
+    }
+
+    &.hideSubnav {
+      transform: translate(0, -15px) scaleY(0.7);
+      opacity: 0;
+    }
+
+    .sections {
+      display: flex;
+      font-size: 12px;
+      padding: 10px 0;
+
+      gap: 25px;
+
+      .label {
+        font-weight: 400;
+      }
+
+      .section {
+        color: $red;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.2s color;
 
         &:hover {
           color: $white;
         }
       }
     }
+  }
+}
 
-    .mobileMenu {
-      display: flex;
-      cursor: pointer;
-      z-index: 10;
-      opacity: 0;
+.whiteTheme {
+  .navbar {
+    &.navbarBg {
+      background: rgb($white, 0.8);
+    }
+  }
 
-      @include media-tabletSm {
-        display: none;
+  .navbar {
+    .gradient {
+      background: linear-gradient(180deg, $white calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+    }
+
+    .left {
+      .logo {
+        .text {
+          background: $blue;
+          color: $white;
+        }
+
+        .football {
+          color: $blue;
+        }
+
+        &:hover {
+          .text {
+            background: $dark-blue;
+          }
+
+          .football {
+            color: $dark-blue;
+          }
+        }
+      }
+    }
+
+    .right {
+      .routes {
+        .route {
+          color: $blue;
+        }
       }
 
-      .icon {
-        color: $red;
-        width: 20px;
-        height: 20px;
+      .search {
+        color: $blue;
+
+        &:hover {
+          color: $dark-blue;
+
+          .input {
+            color: $dark-blue;
+            border: 1px solid $dark-blue;
+
+            &::placeholder {
+              color: rgb($dark-blue, 0.75);
+            }
+          }
+        }
+
+        .input {
+          border: 1px solid $blue;
+          color: $blue;
+
+          &::placeholder {
+            color: rgb($blue, 0.7);
+          }
+        }
       }
 
-      &:hover {
+      .mobileMenu {
+        &:hover {
+          .icon {
+            color: $dark-blue;
+          }
+        }
+
         .icon {
-          color: white;
+          color: $blue;
+        }
+      }
+    }
+
+    .borderBottom {
+      background: rgb($blue, 0.2);
+    }
+  }
+
+  .subnav {
+    .label {
+      color: $gray;
+    }
+    .sections {
+      .section {
+        color: $blue;
+
+        &:hover {
+          color: $dark-blue;
         }
       }
     }
   }
+}
 
-  .borderBottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 1px;
-    width: 100vw;
+.redTheme {
+  &.navbarBg {
+    .navbar {
+      background: rgb($dark-red, 0.7);
+    }
+  }
 
-    background: rgb(197, 197, 197, 0.4);
+  .navbar {
+    .gradient {
+      background: linear-gradient(180deg, $dark-red calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+    }
+
+    .left {
+      .logo {
+        .text {
+          background: $black;
+          color: $dark-red;
+        }
+
+        .football {
+          color: $black;
+        }
+
+        &:hover {
+          .text {
+            background: $white;
+          }
+
+          .football {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .right {
+      .routes {
+        .route {
+          color: $black;
+        }
+      }
+
+      .search {
+        color: $black;
+
+        &:hover {
+          color: $white;
+
+          .input {
+            color: $white;
+            border: 1px solid $white;
+
+            &::placeholder {
+              color: rgb($white, 0.75);
+            }
+          }
+        }
+
+        .input {
+          border: 1px solid $black;
+          color: $black;
+
+          &::placeholder {
+            color: rgb($black, 0.7);
+          }
+        }
+      }
+
+      .mobileMenu {
+        .icon {
+          color: $black;
+        }
+      }
+    }
+
+    .borderBottom {
+      background: rgb($black, 0.2);
+    }
+  }
+
+  .subnav {
+    .sections {
+      .section {
+        color: $black;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.blueTheme {
+  &.navbarBg {
+    .navbar {
+      background: rgb($dark-blue, 0.7);
+    }
+  }
+
+  .navbar {
+    .gradient {
+      background: linear-gradient(180deg, $dark-blue calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+    }
+
+    .left {
+      .logo {
+        .text {
+          background: $black;
+          color: $dark-blue;
+        }
+
+        .football {
+          color: $black;
+        }
+
+        &:hover {
+          .text {
+            background: $white;
+          }
+
+          .football {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .right {
+      .routes {
+        .route {
+          color: $black;
+        }
+      }
+
+      .search {
+        color: $black;
+
+        &:hover {
+          color: $white;
+
+          .input {
+            color: $white;
+            border: 1px solid $white;
+
+            &::placeholder {
+              color: rgb($white, 0.75);
+            }
+          }
+        }
+
+        .input {
+          border: 1px solid $black;
+          color: $black;
+
+          &::placeholder {
+            color: rgb($black, 0.7);
+          }
+        }
+      }
+
+      .mobileMenu {
+        .icon {
+          color: $black;
+        }
+      }
+    }
+
+    .borderBottom {
+      background: rgb($black, 0.2);
+    }
+  }
+
+  .subnav {
+    .sections {
+      .section {
+        color: $black;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  &.redTheme,
+  &.blueTheme,
+  &.whiteTheme {
+    .navbar {
+      background: rgb($black, 1);
+    }
+  }
+
+  .navbar {
+    .left {
+      .logo {
+        .text {
+          background: $white;
+          color: $black;
+        }
+
+        .football {
+          color: $white;
+        }
+      }
+    }
+
+    .right {
+      .mobileMenu {
+        .icon {
+          color: $white;
+        }
+      }
+    }
+
+    .borderBottom {
+      background: rgb($white, 0.2);
+    }
   }
 }

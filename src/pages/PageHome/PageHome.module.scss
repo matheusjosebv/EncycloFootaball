@@ -1,22 +1,21 @@
 @import "../../styles/shared.scss";
 
 .root {
-  .about {
-    height: 100vh;
-    width: 100vw;
-    background: $black;
+  position: relative;
+  min-height: 100vh;
 
-    .container {
-      margin: 50px 0 0;
+  .about {
+    width: 100vw;
+    @include sectionPadding;
+
+    .firstWrapper {
       padding: 0 25px;
 
       @include media-tabletSm {
-        margin: 100px 0 0;
         padding: 0 35px;
       }
 
       @include media-desktopSm {
-        margin: 150px 0 0;
         padding: 0 50px;
       }
 
@@ -46,23 +45,120 @@
         }
       }
     }
+
+    .secondWrapper {
+      margin: 50px 0 0;
+      padding: 0 25px;
+
+      @include media-tabletSm {
+        margin: 50px 0 0;
+        padding: 0 35px;
+      }
+
+      @include media-tabletLg {
+        margin: 75px 0 0;
+      }
+
+      @include media-desktopSm {
+        margin: 100px 0 0;
+        padding: 0 50px;
+      }
+
+      @include media-desktopSm {
+        display: flex;
+        gap: 50px;
+      }
+
+      .textHeading {
+        @include media-desktopSm {
+          width: 50%;
+        }
+      }
+
+      > .img {
+        width: 90%;
+        height: 100vw;
+        margin: 50px 25px 0;
+
+        max-width: 400px;
+        max-height: 500px;
+
+        @include media-desktopSm {
+          width: 50%;
+          margin: 0;
+          height: 450px;
+        }
+      }
+    }
+
+    .number {
+      padding: 25px;
+      font-size: 50px;
+      font-weight: 700;
+    }
   }
 
-  .worldCupHistory {
-    // height: 100vh;
+  .footballHistory {
+    min-height: 100vh;
     width: 100vw;
-    background: $white;
+
+    .textHeading {
+      color: $black;
+    }
+
+    > .img {
+      width: 90%;
+      height: 100vw;
+      margin: 50px 25px 0;
+
+      max-width: 400px;
+      max-height: 500px;
+
+      @include media-desktopSm {
+        width: 50%;
+        margin: 0;
+        height: 450px;
+      }
+    }
   }
 
   .squadBuilder {
-    // height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    background: $red;
+
+    > .img {
+      width: 90%;
+      height: 100vw;
+      margin: 50px 25px 0;
+
+      max-width: 400px;
+      max-height: 500px;
+
+      @include media-desktopSm {
+        width: 50%;
+        margin: 0;
+        height: 450px;
+      }
+    }
   }
 
   .statistics {
-    // height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    background: $blue;
+
+    > .img {
+      width: 90%;
+      height: 100vw;
+      margin: 50px 25px 0;
+
+      max-width: 400px;
+      max-height: 500px;
+
+      @include media-desktopSm {
+        width: 50%;
+        margin: 0;
+        height: 450px;
+      }
+    }
   }
 }

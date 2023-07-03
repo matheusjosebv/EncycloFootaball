@@ -1,0 +1,8 @@
+@import "../../styles/shared.scss";
+
+.root {
+  position: relative;
+  color: $white;
+  transform: translate(0, 20%);
+  opacity: 0;
+}

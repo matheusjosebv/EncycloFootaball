@@ -15,7 +15,7 @@ export default function PageAbout() {
         paragraph="A little bit of our history and purpose studying Football"
       />
 
-      <section className={css.about}>
+      <section className={css.about} data-nav-label="section 1" data-nav-color="BLACK">
         <div className={css.container}>
           <TextHeading
             animate
@@ -26,6 +26,49 @@ export default function PageAbout() {
 
           <Media className={css.img} source={aboutImg} animate alt="football-field" />
         </div>
+      </section>
+
+      <section className={css.about} data-nav-label="section 2" data-nav-color="RED">
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
+      </section>
+      <section className={css.about} data-nav-label="section 3" data-nav-color="BLUE">
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
+      </section>
+      <section className={css.about} data-nav-label="section 4" data-nav-color="WHITE">
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
+        <TextHeading
+          animate
+          className={css.textHeading}
+          title="Who we are"
+          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
+        />
       </section>
     </div>
   );

@@ -21,3 +21,23 @@
     @content;
   }
 }
+
+@mixin sectionPadding {
+  padding: 25px 0;
+
+  @include media-tabletSm {
+    padding: 50px 0;
+  }
+
+  @include media-tabletLg {
+    padding: 75px 0;
+  }
+
+  @include media-desktopSm {
+    padding: 100px 0;
+  }
+
+  @include media-desktopMd {
+    padding: 125px 0;
+  }
+}
