@@ -1,4 +1,87 @@
 @import "../../styles/shared.scss";
 
 .root {
+  display: grid;
+  gap: 25px;
+
+  // @include media-tabletLg {
+  //
+  // }
+
+  &.rtl {
+    .right {
+      // @include media-tabletLg {
+      //   grid-row-start: 1;
+      // }
+    }
+  }
+
+  &.horizontal {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+
+    &.rtl {
+      .right {
+        grid-row-start: 1;
+      }
+    }
+  }
+
+  .left {
+    opacity: 0;
+    transform: translateY(25px);
+
+    .img {
+      width: 100%;
+      height: 60vw;
+      min-height: 250px;
+      min-width: 250px;
+
+      @include media-tabletLg {
+        height: 45vw;
+      }
+      @include media-desktopSm {
+      }
+      @include media-desktopMd {
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 25px 0 0;
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    .paragraph {
+      font-size: 15px;
+      font-weight: 400;
+      margin: 25px 0 0;
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 150px;
+      margin: 25px 0 0;
+      padding: 10px 15px;
+      border-radius: 20px;
+
+      opacity: 0;
+      transform: translateY(25px);
+      color: $white;
+      background: rgb(29, 29, 29);
+    }
+  }
 }

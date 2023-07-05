@@ -57,20 +57,20 @@
   &.active,
   &:hover {
     .route {
-      color: $dark-blue;
+      color: rgb($black, 1);
     }
 
     .underline {
-      background: $dark-blue;
+      background: rgb($black, 1);
     }
   }
 
   .route {
-    color: $blue;
+    color: $dark-blue;
   }
 
   .underline {
-    background: $blue;
+    background: $dark-blue;
   }
 }
 

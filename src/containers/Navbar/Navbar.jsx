@@ -26,9 +26,7 @@ export default function Navbar() {
   const [navbarBg, setNavbarBg] = useState(false);
   const [hideSubnav, setHideSubnav] = useState(false);
   const [subnavLabels, setSubnavLabels] = useState([]);
-
   const { navbarTheme, setNavbarTheme } = useContext(Context);
-  console.log(navbarTheme, setNavbarTheme);
 
   const resolvedPath = useResolvedPath();
 

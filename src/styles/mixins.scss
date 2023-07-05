@@ -22,22 +22,92 @@
   }
 }
 
-@mixin sectionPadding {
-  padding: 25px 0;
-
-  @include media-tabletSm {
-    padding: 50px 0;
-  }
+@mixin topBottomPadding {
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   @include media-tabletLg {
-    padding: 75px 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   @include media-desktopSm {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   @include media-desktopMd {
-    padding: 125px 0;
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+}
+
+@mixin topBottomMargin {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include media-tabletLg {
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+
+  @include media-desktopSm {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @include media-desktopMd {
+    margin-top: 125px;
+    margin-bottom: 125px;
+  }
+}
+
+@mixin leftRightPadding {
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @include media-tabletSm {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  @include media-tabletLg {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include media-desktopSm {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  @include media-desktopMd {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@mixin leftRightMargin {
+  margin-left: 25px;
+  margin-right: 25px;
+
+  @include media-tabletSm {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+
+  @include media-tabletLg {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include media-desktopSm {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  @include media-desktopMd {
+    margin-left: 100px;
+    margin-right: 100px;
   }
 }

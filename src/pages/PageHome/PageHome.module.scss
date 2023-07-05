@@ -6,101 +6,139 @@
 
   .about {
     width: 100vw;
-    @include sectionPadding;
+    @include topBottomPadding;
 
-    .firstWrapper {
-      padding: 0 25px;
+    .firstWrapper,
+    .secondWrapper,
+    .thirdWrapper {
+      @include leftRightPadding;
 
-      @include media-tabletSm {
-        padding: 0 35px;
-      }
-
-      @include media-desktopSm {
-        padding: 0 50px;
-      }
-
-      @include media-desktopSm {
+      @include media-tabletLg {
         display: flex;
         gap: 50px;
       }
 
       .textHeading {
-        @include media-desktopSm {
+        @include media-tabletLg {
           width: 50%;
         }
       }
 
       > .img {
-        width: 90%;
+        width: 100%;
         height: 100vw;
-        margin: 50px 25px 0;
+        margin: 50px auto 0;
 
-        max-width: 400px;
-        max-height: 500px;
+        max-height: 450px;
 
-        @include media-desktopSm {
+        @include media-tabletLg {
           width: 50%;
           margin: 0;
-          height: 450px;
+          max-width: 400px;
+        }
+
+        @include media-desktopSm {
+          max-width: 600px;
+          max-height: 575px;
         }
       }
+    }
+
+    .secondWrapper,
+    .thirdWrapper {
+      @include topBottomMargin;
     }
 
     .secondWrapper {
-      margin: 50px 0 0;
-      padding: 0 25px;
-
-      @include media-tabletSm {
-        margin: 50px 0 0;
-        padding: 0 35px;
-      }
-
       @include media-tabletLg {
-        margin: 75px 0 0;
+        flex-direction: row-reverse;
       }
+    }
 
-      @include media-desktopSm {
-        margin: 100px 0 0;
-        padding: 0 50px;
-      }
+    .forthWrapper {
+      @include topBottomMargin;
+      @include leftRightMargin;
 
-      @include media-desktopSm {
-        display: flex;
-        gap: 50px;
-      }
+      .title {
+        font-size: 26px;
+        font-weight: 700;
 
-      .textHeading {
+        @include media-tabletSm {
+          font-size: 32px;
+        }
+
         @include media-desktopSm {
-          width: 50%;
+          font-size: 40px;
         }
       }
 
-      > .img {
-        width: 90%;
-        height: 100vw;
-        margin: 50px 25px 0;
+      .topics {
+        display: grid;
+        margin: 50px 0 0;
+        gap: 25px;
 
-        max-width: 400px;
-        max-height: 500px;
+        @include media-tabletSm {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 35px;
+          margin: 70px 0 0;
+        }
+
+        @include media-tabletLg {
+          gap: 50px;
+          margin: 100px 0 0;
+
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media-desktopMd {
+          margin: 150px 0 0;
+
+          gap: 70px;
+        }
+      }
+    }
+  }
+
+  .statistics {
+    width: 100vw;
+    @include topBottomPadding;
+
+    .linkCards {
+      @include leftRightPadding;
+      display: grid;
+
+      @include media-desktopMd {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 35px;
+      }
+
+      .linkCard {
+        margin: 50px 0 0;
+
+        @include media-tabletSm {
+          margin: 75px 0 0;
+        }
+
+        @include media-tabletLg {
+          margin: 100px 0 0;
+        }
 
         @include media-desktopSm {
-          width: 50%;
-          margin: 0;
-          height: 450px;
+          margin: 125px 0 0;
         }
       }
     }
 
-    .number {
-      padding: 25px;
-      font-size: 50px;
-      font-weight: 700;
+    .carousels {
+      .carousel {
+      }
     }
   }
 
   .footballHistory {
-    min-height: 100vh;
     width: 100vw;
+    @include topBottomPadding;
+    @include leftRightPadding;
 
     .textHeading {
       color: $black;
@@ -125,40 +163,5 @@
   .squadBuilder {
     min-height: 100vh;
     width: 100vw;
-
-    > .img {
-      width: 90%;
-      height: 100vw;
-      margin: 50px 25px 0;
-
-      max-width: 400px;
-      max-height: 500px;
-
-      @include media-desktopSm {
-        width: 50%;
-        margin: 0;
-        height: 450px;
-      }
-    }
-  }
-
-  .statistics {
-    min-height: 100vh;
-    width: 100vw;
-
-    > .img {
-      width: 90%;
-      height: 100vw;
-      margin: 50px 25px 0;
-
-      max-width: 400px;
-      max-height: 500px;
-
-      @include media-desktopSm {
-        width: 50%;
-        margin: 0;
-        height: 450px;
-      }
-    }
   }
 }
