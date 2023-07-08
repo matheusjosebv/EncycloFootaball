@@ -43,33 +43,33 @@
     }
 
     .title {
-      font-size: 30px;
+      font-size: 3rem;
 
       opacity: 0;
       transform: translateY(30%);
 
       @include media-tabletSm {
-        font-size: 35px;
+        font-size: 3.5rem;
       }
 
       @include media-desktopSm {
-        font-size: 40px;
+        font-size: 4rem;
       }
     }
 
     .content {
-      font-size: 15px;
+      font-size: 1.5rem;
       margin: 10px 0 0;
 
       opacity: 0;
       transform: translateY(30%);
 
       @include media-tabletSm {
-        font-size: 16px;
+        font-size: 1.6rem;
       }
 
       @include media-desktopSm {
-        font-size: 17px;
+        font-size: 1.7rem;
       }
     }
   }

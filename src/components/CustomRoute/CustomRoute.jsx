@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
 import classNames from "classnames";
+import Context from "../../hooks/Context";
 import css from "./CustomRoute.module.scss";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import Context from "../../hooks/Context";
-import { useContext } from "react";
 
 export default function CustomRoute({ className, to, name, ...props }) {
   const resolvedPath = useResolvedPath(to);
@@ -15,9 +16,9 @@ export default function CustomRoute({ className, to, name, ...props }) {
         css.root,
         className,
         { [css.active]: isActive },
-        { [css.white]: navbarTheme.white },
-        { [css.red]: navbarTheme.red },
-        { [css.blue]: navbarTheme.blue }
+        { [css.red]: navbarTheme === "red" },
+        { [css.blue]: navbarTheme === "blue" },
+        { [css.white]: navbarTheme === "white" }
       )}
     >
       <Link to={to} {...props}>

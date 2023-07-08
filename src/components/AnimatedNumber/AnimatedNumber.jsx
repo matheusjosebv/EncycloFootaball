@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-export default function AnimatedNumber({ className, start, final, duration, ease, symbol }) {
+export default function AnimatedNumber({ className, start, final, duration, ease }) {
   const rootRef = useRef(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function AnimatedNumber({ className, start, final, duration, ease
 
     const root = rootRef.current;
     const tl = gsap
-      .timeline({ scrollTrigger: { trigger: root, start: "top 70%" } })
+      .timeline({ scrollTrigger: { trigger: root, start: "top 75%" } })
       //
       .to(root, {
         y: 0,

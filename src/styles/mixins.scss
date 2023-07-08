@@ -23,91 +23,91 @@
 }
 
 @mixin topBottomPadding {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 
   @include media-tabletLg {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
   }
 
   @include media-desktopSm {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
   }
 
   @include media-desktopMd {
-    padding-top: 125px;
-    padding-bottom: 125px;
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
   }
 }
 
 @mixin topBottomMargin {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 
   @include media-tabletLg {
-    margin-top: 75px;
-    margin-bottom: 75px;
+    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
   }
 
   @include media-desktopSm {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
   }
 
   @include media-desktopMd {
-    margin-top: 125px;
-    margin-bottom: 125px;
+    margin-top: 12.5rem;
+    margin-bottom: 12.5rem;
   }
 }
 
 @mixin leftRightPadding {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 
   @include media-tabletSm {
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   @include media-tabletLg {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   @include media-desktopSm {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 
   @include media-desktopMd {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
 @mixin leftRightMargin {
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 
   @include media-tabletSm {
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
   }
 
   @include media-tabletLg {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 
   @include media-desktopSm {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   @include media-desktopMd {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }

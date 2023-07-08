@@ -10,27 +10,28 @@
   }
 
   .title {
-    font-size: 26px;
+    font-size: 2.6rem;
 
     @include media-tabletSm {
-      font-size: 32px;
+      font-size: 3.2rem;
     }
 
     @include media-desktopSm {
-      font-size: 38px;
+      font-size: 3.8rem;
     }
   }
 
   .paragraph {
     margin: 12px 0 0;
-    font-size: 15px;
+    font-size: 1.5rem;
+    max-width: 50rem;
 
     @include media-tabletSm {
-      font-size: 16px;
+      font-size: 1.6rem;
     }
 
     @include media-desktopSm {
-      font-size: 17px;
+      font-size: 1.7rem;
     }
   }
 }

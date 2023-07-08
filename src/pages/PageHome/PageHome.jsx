@@ -1,33 +1,66 @@
+import gsap from "gsap";
 import css from "./PageHome.module.scss";
-// import heroImg from "../../assets/imgs/james-kirkup-LbT_j62t94U-unsplash.jpg";
+import useLayout from "../../hooks/useLayout.jsx";
+
 import tacticImg from "../../assets/imgs/tactic.jpeg";
 import heroImg from "../../assets/imgs/liam-mckay-QYeEoTv6Gbw-unsplash.jpg";
-import aboutImg from "../../assets/imgs/remi-jacquaint-WQEP0mrTD8Y-unsplash.jpg";
-import aboutImg1 from "../../assets/imgs/remi-jacquaint-WQEP0mrTD8Y-unsplash.jpg";
+import aboutImg1 from "../../assets/imgs/matthieu-joannon-JUS82ClcfLw-unsplash.jpg";
 import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
 import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
 
 import Hero from "../../components/Hero/Hero";
-import TextHeading from "../../components/TextHeading/TextHeading";
 import Media from "../../components/Media/Media";
 import LinkCard from "../../components/LinkCard/LinkCard";
 import NumberBox from "../../components/NumberBox/NumberBox";
+import TextHeading from "../../components/TextHeading/TextHeading";
+import CustomCarousel from "../../components/CustomCarousel/CustomCarousel";
 
+import { MdStadium } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
 import { TbPlayFootball } from "react-icons/tb";
-import { MdStadium } from "react-icons/md";
 import { FaPeopleArrows } from "react-icons/fa";
 import { BsFillFlagFill } from "react-icons/bs";
-import useLayout from "../../hooks/useLayout.jsx";
+
+import stadiumData from "../../data/carouselStadium";
+import { useEffect, useRef } from "react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 export default function PageHome() {
   const layout = useLayout();
-  console.log(layout);
-  // console.log(layout.tabletLg, "tabletLg");
-  // console.log(layout.desktopSm, "desktopSm");
+
+  const elsRef = useRef();
+  const gridRef = useRef();
+  const fieldRef = useRef();
+  const gridTitleRef = useRef();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const gridTl = gsap
+      .timeline({ scrollTrigger: { trigger: gridRef.current, start: "top 55%" } })
+      .to(gridTitleRef.current, { opacity: 1, y: 0 })
+      .to(gridRef.current.children, {
+        y: 0,
+        opacity: 1,
+        duration: 1.8,
+        stagger: 0.2,
+        scale: 1,
+        ease: "expo",
+      });
+
+    const fieldTl = gsap
+      .timeline({ scrollTrigger: { trigger: fieldRef.current, start: "top 60%" } })
+      .to(fieldRef.current.firstChild, { opacity: 1, y: 0 })
+      .to(elsRef.current.children, { stagger: 0.15, scale: 1, ease: "back" });
+
+    return () => {
+      gridTl.kill();
+      fieldTl.kill();
+    };
+  }, []);
 
   return (
-    <div className={css.root}>
+    <div className={css.root} data-nav-color="BLACK">
       <Hero
         bgImg={heroImg}
         title="EncycloFootball"
@@ -136,7 +169,9 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section className={css.statistics} data-nav-label="Statistics" data-nav-color="RED">
+      <section className={css.statistics} data-nav-label="artitles" data-nav-color="RED">
+        <h1 className={css.title}>Some Articles You May Want To Read:</h1>
+
         <div className={css.linkCards}>
           <LinkCard
             animate
@@ -169,71 +204,114 @@ export default function PageHome() {
         </div>
 
         <div className={css.carousels}>
-          {/* <Carousel className={css.carousel} data={}/> */}
-          {/* <Carousel className={css.carousel} data={}/> */}
-          {/* <Carousel className={css.carousel} data={}/> */}
+          <CustomCarousel className={css.carousel} data={stadiumData} animate />
+          <CustomCarousel className={css.carousel} data={stadiumData} animate />
+          <CustomCarousel className={css.carousel} data={stadiumData} animate />
         </div>
       </section>
 
       <section
         className={css.footballHistory}
-        data-nav-label="Football History"
+        data-nav-label="I dont know yet"
         data-nav-color="WHITE"
       >
-        <TextHeading
-          animate
-          className={css.textHeading}
-          title="Your ultimate source"
-          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
-        />
+        <h1 ref={gridTitleRef} className={css.title}>
+          Some Football Legends:
+        </h1>
 
-        <Media className={css.img} source={aboutImg} animate alt="football-field" />
-
-        <TextHeading
-          animate
-          className={css.textHeading}
-          title="Your ultimate source"
-          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
-        />
-
-        <Media className={css.img} source={aboutImg} animate alt="football-field" />
-        <div>
-          {/* <TextHeading
-            title="World Cup History"
-            paragraph="Read about the incredible history of the biggest football competition in the world"
-          />
-
-          <Media className={css.WCImg} alt="world-cup-image" animate source={WCImg} />
+        <div ref={gridRef} className={css.grid}>
+          <div className={css.photo}>
+            <img className={css.img} src={`/src/assets/imgs/pele.jpeg`} />
+            <div className={css.gradient}>
+              <p>Pelé</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/F0bjluXXoAAUiPt.jpeg"} />
+            <div className={css.gradient}>
+              <p>Lionel Messi</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/zinedine-zidane.webp"} />
+            <div className={css.gradient}>
+              <p>Zinedine Zidane</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/maradona.jpeg"} />
+            <div className={css.gradient}>
+              <p>Diego Maradona</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/ronaldo.jpeg"} />
+            <div className={css.gradient}>
+              <p>Ronaldo</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/cruyff.jpeg"} />
+            <div className={css.gradient}>
+              <p>Johan Cruyff</p>
+            </div>
+          </div>
+          <div className={css.photo}>
+            <img className={css.img} src={"/src/assets/imgs/cristiano-ronaldo.jpeg"} />
+            <div className={css.gradient}>
+              <p>Cristiano Ronaldo</p>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <TextHeading
-            title="World Cup History"
-            paragraph="Read about the incredible history of the biggest football competition in the world"
-          />
-
-          <Media className={css.WCImg} alt="world-cup-image" animate source={WCImg} /> */}
+        <div className={css.readMore}>
+          <button className={css.btn}>Read More</button>
         </div>
       </section>
 
       <section className={css.squadBuilder} data-nav-label="Squad Builder" data-nav-color="BLUE">
-        <TextHeading
-          animate
-          className={css.textHeading}
-          title="Your ultimate source"
-          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
-        />
+        <div className={css.field} ref={fieldRef}>
+          <img className={css.img} src="/src/assets/imgs/field.png" />
 
-        <Media className={css.img} source={aboutImg} animate alt="football-field" />
-
-        <Media className={css.img} source={aboutImg} animate alt="football-field" />
-
-        <TextHeading
-          animate
-          className={css.textHeading}
-          title="Your ultimate source"
-          paragraph="Welcome to EncycloFootball, your ultimate source for in-depth articles on football players, stadiums, and everything related to the beautiful game. Discover fascinating stories and insights about your favorite players, iconic stadiums, and the rich history and culture of football. Join us on this exciting journey and explore the world of football like never before!"
-        />
+          <div ref={elsRef} className={css.els}>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+            <div className={css.el}>
+              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

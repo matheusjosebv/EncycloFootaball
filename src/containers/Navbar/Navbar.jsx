@@ -39,24 +39,24 @@ export default function Navbar() {
     const main = Array.from(document.querySelectorAll(`[id="root"]`));
 
     const setWhiteTheme = () => {
-      setNavbarTheme({ white: true, black: false, red: false, blue: false });
+      setNavbarTheme("white");
       gsap.to(main, { background: "#fff" });
     };
 
     const setBlackTheme = () => {
-      setNavbarTheme({ white: false, black: true, red: false, blue: false });
+      setNavbarTheme("black");
 
       gsap.to(main, { background: "#000" });
     };
 
     const setRedTheme = () => {
-      setNavbarTheme({ white: false, black: false, red: true, blue: false });
+      setNavbarTheme("red");
 
       gsap.to(main, { background: "#F16262" });
     };
 
     const setBlueTheme = () => {
-      setNavbarTheme({ white: false, black: false, red: false, blue: true });
+      setNavbarTheme("blue");
 
       gsap.to(main, { background: "#6CBAFF" });
     };
@@ -70,8 +70,8 @@ export default function Navbar() {
       whiteTriggers.push(
         ScrollTrigger.create({
           trigger: w,
-          start: "top 50%",
-          end: "bottom 50%",
+          start: "top 30%",
+          end: "bottom 30%",
           onEnter: setWhiteTheme,
           onEnterBack: setWhiteTheme,
         })
@@ -82,8 +82,8 @@ export default function Navbar() {
       blackTriggers.push(
         ScrollTrigger.create({
           trigger: w,
-          start: "top 50%",
-          end: "bottom 50%",
+          start: "top 30%",
+          end: "bottom 30%",
           onEnter: setBlackTheme,
           onEnterBack: setBlackTheme,
         })
@@ -94,8 +94,8 @@ export default function Navbar() {
       redTriggers.push(
         ScrollTrigger.create({
           trigger: w,
-          start: "top 50%",
-          end: "bottom 50%",
+          start: "top 30%",
+          end: "bottom 30%",
           onEnter: setRedTheme,
           onEnterBack: setRedTheme,
         })
@@ -106,8 +106,8 @@ export default function Navbar() {
       blueTriggers.push(
         ScrollTrigger.create({
           trigger: w,
-          start: "top 50%",
-          end: "bottom 50%",
+          start: "top 30%",
+          end: "bottom 30%",
           onEnter: setBlueTheme,
           onEnterBack: setBlueTheme,
         })
@@ -131,7 +131,7 @@ export default function Navbar() {
         t.kill();
       });
     };
-  }, [resolvedPath]);
+  }, [resolvedPath, setNavbarTheme]);
 
   const onSubNavClick = useCallback((label) => {
     const navHeight = navbarRef.current.clientHeight;
@@ -199,9 +199,9 @@ export default function Navbar() {
       className={classNames(
         css.root,
         { [css.navbarBg]: navbarBg },
-        { [css.redTheme]: navbarTheme.red },
-        { [css.blueTheme]: navbarTheme.blue },
-        { [css.whiteTheme]: navbarTheme.white },
+        { [css.redTheme]: navbarTheme === "red" },
+        { [css.blueTheme]: navbarTheme === "blue" },
+        { [css.whiteTheme]: navbarTheme === "white" },
         { [css.sidebar]: sidebar }
       )}
       ref={rootRef}

@@ -38,7 +38,7 @@ const Media = ({ source, className, animate, alt }) => {
 
     if (animate) {
       tl = gsap
-        .timeline({ scrollTrigger: { trigger: root, start: "top 70%" } })
+        .timeline({ scrollTrigger: { trigger: root, start: "top 75%" } })
         .to(root, { y: 0, opacity: 1, duration: 1 });
     }
 
@@ -72,7 +72,7 @@ const Media = ({ source, className, animate, alt }) => {
           </div> */}
         </div>
       ) : (
-        <div className={css.imgWrapper}>
+        <div className={css.parallax}>
           <img ref={imgRef} className={css.img} src={source} alt={alt} />
         </div>
       )}

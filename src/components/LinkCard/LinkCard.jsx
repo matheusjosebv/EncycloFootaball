@@ -24,7 +24,7 @@ export default function LinkCard({
 
     let tl;
     if (animate) {
-      tl = gsap.timeline({ scrollTrigger: { trigger: leftRef.current, start: "top 70%" } });
+      tl = gsap.timeline({ scrollTrigger: { trigger: leftRef.current, start: "top 75%" } });
       tl.to(leftRef.current, { y: 0, opacity: 1 }) //
         .to(rightRef.current.children, { stagger: 0.1, y: 0, opacity: 1 });
     }

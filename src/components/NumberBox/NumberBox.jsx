@@ -26,7 +26,7 @@ export default function NumberBox({
 
     if (animate) {
       tl = gsap
-        .timeline({ scrollTrigger: { trigger: root, start: "top 70%" } })
+        .timeline({ scrollTrigger: { trigger: root, start: "top 75%" } })
         .to(root, { y: 0, opacity: 1 })
         .to(root.children, { opacity: 1, stagger: 0.2 });
     }
@@ -39,7 +39,7 @@ export default function NumberBox({
   return (
     <div ref={rootRef} className={classNames(css.root, className)}>
       <div className={css.icon}>{icon}</div>
-      <div className={css.wrapper}>
+      <div className={css.numContainer}>
         {symbol && <span className={css.symbol}>{symbol}</span>}
         <AnimatedNumber
           className={css.number}

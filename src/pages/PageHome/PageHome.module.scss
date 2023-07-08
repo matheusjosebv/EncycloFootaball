@@ -3,43 +3,47 @@
 .root {
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 
   .about {
-    width: 100vw;
     @include topBottomPadding;
+    @include leftRightPadding;
 
     .firstWrapper,
     .secondWrapper,
     .thirdWrapper {
-      @include leftRightPadding;
-
       @include media-tabletLg {
         display: flex;
-        gap: 50px;
+        gap: 5rem;
+      }
+
+      @include media-desktopSm {
+        gap: 7.5rem;
+      }
+
+      @include media-desktopMd {
+        gap: 10rem;
       }
 
       .textHeading {
         @include media-tabletLg {
-          width: 50%;
+          flex: 1;
         }
       }
 
       > .img {
-        width: 100%;
-        height: 100vw;
-        margin: 50px auto 0;
+        max-height: 52rem;
+        aspect-ratio: 1/1;
+        margin: 5rem auto 0;
 
-        max-height: 450px;
-
-        @include media-tabletLg {
-          width: 50%;
-          margin: 0;
-          max-width: 400px;
+        @include media-tabletSm {
+          aspect-ratio: 4/3;
         }
 
-        @include media-desktopSm {
-          max-width: 600px;
-          max-height: 575px;
+        @include media-tabletLg {
+          aspect-ratio: 1/1;
+          margin: 0;
+          flex: 1;
         }
       }
     }
@@ -57,43 +61,44 @@
 
     .forthWrapper {
       @include topBottomMargin;
-      @include leftRightMargin;
 
       .title {
-        font-size: 26px;
-        font-weight: 700;
+        font-size: 2.6rem;
 
         @include media-tabletSm {
-          font-size: 32px;
+          font-size: 3.2rem;
         }
 
         @include media-desktopSm {
-          font-size: 40px;
+          font-size: 4rem;
         }
       }
 
       .topics {
         display: grid;
-        margin: 50px 0 0;
-        gap: 25px;
+        margin: 5rem 0 0;
+        gap: 2.5rem;
+        justify-content: center;
 
         @include media-tabletSm {
           grid-template-columns: repeat(2, 1fr);
-          gap: 35px;
-          margin: 70px 0 0;
+          gap: 3.5rem;
+          margin: 7rem 0 0;
         }
 
         @include media-tabletLg {
-          gap: 50px;
-          margin: 100px 0 0;
+          margin: 10rem 0 0;
 
           grid-template-columns: repeat(3, 1fr);
         }
 
-        @include media-desktopMd {
-          margin: 150px 0 0;
+        @include media-desktopSm {
+          gap: 5.5rem;
+        }
 
-          gap: 70px;
+        @include media-desktopMd {
+          margin: 15rem 0 0;
+          gap: 7rem;
         }
       }
     }
@@ -102,6 +107,20 @@
   .statistics {
     width: 100vw;
     @include topBottomPadding;
+
+    .title {
+      color: $black;
+      font-size: 2.6rem;
+      @include leftRightPadding;
+
+      @include media-tabletSm {
+        font-size: 3.2rem;
+      }
+
+      @include media-desktopSm {
+        font-size: 4rem;
+      }
+    }
 
     .linkCards {
       @include leftRightPadding;
@@ -114,6 +133,7 @@
 
       .linkCard {
         margin: 50px 0 0;
+        color: $black;
 
         @include media-tabletSm {
           margin: 75px 0 0;
@@ -130,7 +150,10 @@
     }
 
     .carousels {
+      margin: 150px 0 0;
+
       .carousel {
+        margin: 100px 0 0;
       }
     }
   }
@@ -140,28 +163,235 @@
     @include topBottomPadding;
     @include leftRightPadding;
 
-    .textHeading {
+    .title {
       color: $black;
-    }
+      font-size: 2.6rem;
 
-    > .img {
-      width: 90%;
-      height: 100vw;
-      margin: 50px 25px 0;
+      opacity: 0;
+      transform: translateY(2.5rem);
 
-      max-width: 400px;
-      max-height: 500px;
+      @include media-tabletSm {
+        font-size: 3.2rem;
+      }
 
       @include media-desktopSm {
-        width: 50%;
-        margin: 0;
-        height: 450px;
+        font-size: 4rem;
+      }
+    }
+
+    .grid {
+      margin: 5rem 0 0;
+
+      display: grid;
+      gap: 1rem;
+      grid-auto-columns: 1fr;
+      grid-template-areas:
+        "one one"
+        "two three"
+        "four five"
+        "six six"
+        "seven seven";
+
+      @include media-tabletSm {
+        grid-template-areas:
+          "one one two"
+          "three four four"
+          "five five six"
+          "seven seven seven";
+      }
+
+      @include media-desktopSm {
+        grid-template-areas:
+          "one one one two"
+          "three four four five"
+          "three six seven seven";
+      }
+
+      .photo {
+        position: relative;
+        overflow: hidden;
+
+        opacity: 0;
+        transform: translateY(2.5rem);
+        transform: scale(0.7);
+
+        &:nth-child(1) {
+          grid-area: one;
+          aspect-ratio: 16/9;
+        }
+        &:nth-child(2) {
+          grid-area: two;
+        }
+        &:nth-child(3) {
+          grid-area: three;
+        }
+        &:nth-child(4) {
+          grid-area: four;
+        }
+        &:nth-child(5) {
+          grid-area: five;
+        }
+        &:nth-child(6) {
+          grid-area: six;
+        }
+        &:nth-child(7) {
+          grid-area: seven;
+        }
+
+        .img {
+          height: 100%;
+          object-fit: cover;
+          transition: 1s transform ease;
+        }
+
+        &:hover {
+          .img {
+            transform: scale(1.1);
+          }
+        }
+
+        .gradient {
+          position: absolute;
+          z-index: 2;
+          right: 0;
+          bottom: 0;
+          padding: 4rem 1rem 1rem;
+          width: 100%;
+          background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), rgb(#000, 0.7));
+
+          @include media-tabletSm {
+            padding: 5rem 2rem 2rem;
+          }
+
+          p {
+            text-align: end;
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .readMore {
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+
+        width: 15rem;
+        margin: 2.5rem 0 0 auto;
+        padding: 0.8em 1em;
+
+        font-weight: 600;
+        border-radius: 2rem;
+        text-transform: uppercase;
+
+        color: $white;
+        background: rgb(29, 29, 29);
+        transition: 0.25s background, 0.25s color;
+
+        &:hover {
+          background: $blue;
+          color: rgb(29, 29, 29);
+        }
       }
     }
   }
 
   .squadBuilder {
-    min-height: 100vh;
     width: 100vw;
+    @include topBottomPadding;
+    @include leftRightPadding;
+
+    .field {
+      position: relative;
+      margin: 0 0 0 auto;
+      width: 420px;
+
+      .img {
+        position: absolute;
+        aspect-ratio: 3/4;
+        opacity: 0;
+        transform: translateY(2.5rem);
+      }
+
+      .els {
+        .el {
+          position: absolute;
+          transform: scale(0);
+
+          .player {
+            background: $white;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            border: 2px solid grey;
+            z-index: 2;
+            padding: 0.25rem;
+          }
+
+          &:nth-child(1) {
+            top: 5rem;
+            left: 18rem;
+          }
+
+          &:nth-child(2) {
+            top: 7rem;
+            left: 8rem;
+          }
+
+          &:nth-child(3) {
+            top: 7rem;
+            left: 28rem;
+          }
+
+          &:nth-child(4) {
+            top: 17rem;
+            left: 8rem;
+          }
+
+          &:nth-child(5) {
+            top: 19rem;
+            left: 18rem;
+          }
+
+          &:nth-child(6) {
+            top: 17rem;
+            left: 28rem;
+          }
+
+          &:nth-child(7) {
+            top: 28rem;
+            left: 4rem;
+          }
+
+          &:nth-child(8) {
+            top: 32rem;
+            left: 13rem;
+          }
+
+          &:nth-child(9) {
+            top: 32rem;
+            left: 24rem;
+          }
+
+          &:nth-child(10) {
+            top: 28rem;
+            left: 33rem;
+          }
+
+          &:nth-child(11) {
+            top: 42rem;
+            left: 18rem;
+          }
+
+          &:nth-child(12) {
+            top: 49rem;
+            left: 1rem;
+          }
+        }
+      }
+    }
   }
 }

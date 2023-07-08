@@ -15,7 +15,7 @@ export default function TextHeading({ title, paragraph, className, animate }) {
     const root = rootRef.current;
     if (animate) {
       tl = gsap
-        .timeline({ scrollTrigger: { trigger: root, start: "top 70%" } })
+        .timeline({ scrollTrigger: { trigger: root, start: "top 75%" } })
         .to(root.children, { y: 0, opacity: 1, duration: 0.66, stagger: 0.17 });
     }
 
@@ -23,6 +23,7 @@ export default function TextHeading({ title, paragraph, className, animate }) {
       if (tl) tl.kill();
     };
   }, [animate]);
+
   return (
     <div className={classNames(css.root, className, { [css.animate]: animate })} ref={rootRef}>
       <h1 className={css.title}>{title}</h1>

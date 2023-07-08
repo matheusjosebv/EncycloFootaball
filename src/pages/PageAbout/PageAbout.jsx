@@ -8,7 +8,7 @@ import Media from "../../components/Media/Media";
 
 export default function PageAbout() {
   return (
-    <div className={css.root}>
+    <div className={css.root} data-nav-color="BLACK">
       <Hero
         bgImg={heroImg}
         title="About Us"
