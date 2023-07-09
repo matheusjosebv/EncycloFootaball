@@ -3,7 +3,7 @@
 .root {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .about {
     @include topBottomPadding;
@@ -79,20 +79,19 @@
         margin: 5rem 0 0;
         gap: 2.5rem;
         justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
 
         @include media-tabletSm {
-          grid-template-columns: repeat(2, 1fr);
           gap: 3.5rem;
           margin: 7rem 0 0;
         }
 
         @include media-tabletLg {
           margin: 10rem 0 0;
-
-          grid-template-columns: repeat(3, 1fr);
         }
 
         @include media-desktopSm {
+          grid-template-columns: repeat(3, 1fr);
           gap: 5.5rem;
         }
 
@@ -125,6 +124,7 @@
     .linkCards {
       @include leftRightPadding;
       display: grid;
+      justify-content: center;
 
       @include media-desktopMd {
         grid-template-columns: 1fr 1fr 1fr;

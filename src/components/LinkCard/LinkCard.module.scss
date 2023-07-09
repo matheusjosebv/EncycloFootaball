@@ -4,16 +4,12 @@
   display: grid;
   gap: 2.5rem;
 
-  // @include media-tabletLg {
-  //
-  // }
+  @include media-tabletSm {
+    max-width: 550px;
+  }
 
-  &.rtl {
-    .right {
-      // @include media-tabletLg {
-      //   grid-row-start: 1;
-      // }
-    }
+  @include media-tabletLg {
+    max-width: unset;
   }
 
   &.horizontal {
@@ -32,18 +28,7 @@
     transform: translateY(2.5rem);
 
     .img {
-      width: 100%;
-      height: 60vw;
-      min-height: 25rem;
-      min-width: 25rem;
-
-      @include media-tabletLg {
-        height: 45vw;
-      }
-      @include media-desktopSm {
-      }
-      @include media-desktopMd {
-      }
+      aspect-ratio: 4/3;
     }
   }
 

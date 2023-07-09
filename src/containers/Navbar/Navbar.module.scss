@@ -18,32 +18,28 @@
     }
   }
 
-  &.sidebar {
-    background: rgb($black, 1);
-  }
-
   .navbar {
     position: relative;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 1.5rem 2rem;
 
     @include media-tabletSm {
-      padding: 15px 30px;
+      padding: 1.5rem 3rem;
     }
 
     @include media-tabletLg {
-      padding: 15px 50px;
+      padding: 1.5rem 5rem;
     }
 
     @include media-desktopSm {
-      padding: 18px 55px;
+      padding: 1.8rem 5.5rem;
     }
 
     @include media-desktopMd {
-      padding: 20px 80px;
+      padding: 2rem 8rem;
     }
 
     .gradient {
@@ -613,43 +609,6 @@
           color: $white;
         }
       }
-    }
-  }
-}
-
-.sidebar {
-  &.redTheme,
-  &.blueTheme,
-  &.whiteTheme {
-    .navbar {
-      background: rgb($black, 1);
-    }
-  }
-
-  .navbar {
-    .left {
-      .logo {
-        .text {
-          background: $white;
-          color: $black;
-        }
-
-        .football {
-          color: $white;
-        }
-      }
-    }
-
-    .right {
-      .mobileMenu {
-        .icon {
-          color: $white;
-        }
-      }
-    }
-
-    .borderBottom {
-      background: rgb($white, 0.2);
     }
   }
 }

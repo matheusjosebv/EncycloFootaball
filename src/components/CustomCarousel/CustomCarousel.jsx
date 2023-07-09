@@ -10,7 +10,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
 
-export default function CustomCarousel({ className, data, animate }) {
+export default function CustomCarousel({ className, data, animate, title, btnLabel, btnHref }) {
   const { navbarTheme } = useContext(Context);
   const rootRef = useRef();
 
@@ -75,6 +75,18 @@ export default function CustomCarousel({ className, data, animate }) {
           );
         })}
       </Slider>
+
+      {(title || btnLabel) && (
+        <div className={css.callToAction}>
+          {title && <h1 className={css.title}>{title}</h1>}
+
+          {btnLabel && (
+            <a href={btnHref}>
+              <button className={css.btn}>{btnLabel} </button>
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }

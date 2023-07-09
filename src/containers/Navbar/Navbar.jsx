@@ -31,6 +31,15 @@ export default function Navbar() {
   const resolvedPath = useResolvedPath();
 
   useEffect(() => {
+    const currentPage = document.querySelectorAll("body");
+    if (sidebar) {
+      currentPage[0].style.overflow = "hidden";
+    } else {
+      currentPage[0].style.overflow = "auto";
+    }
+  }, [sidebar]);
+
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const whiteSecs = Array.from(document.querySelectorAll(`[data-nav-color="WHITE"]`));
     const blackSecs = Array.from(document.querySelectorAll(`[data-nav-color="BLACK"]`));
@@ -201,8 +210,7 @@ export default function Navbar() {
         { [css.navbarBg]: navbarBg },
         { [css.redTheme]: navbarTheme === "red" },
         { [css.blueTheme]: navbarTheme === "blue" },
-        { [css.whiteTheme]: navbarTheme === "white" },
-        { [css.sidebar]: sidebar }
+        { [css.whiteTheme]: navbarTheme === "white" }
       )}
       ref={rootRef}
     >

@@ -60,7 +60,7 @@ export default function PageHome() {
   }, []);
 
   return (
-    <div className={css.root} data-nav-color="BLACK">
+    <main className={css.root} data-nav-color="BLACK">
       <Hero
         bgImg={heroImg}
         title="EncycloFootball"
@@ -204,9 +204,30 @@ export default function PageHome() {
         </div>
 
         <div className={css.carousels}>
-          <CustomCarousel className={css.carousel} data={stadiumData} animate />
-          <CustomCarousel className={css.carousel} data={stadiumData} animate />
-          <CustomCarousel className={css.carousel} data={stadiumData} animate />
+          <CustomCarousel
+            className={css.carousel}
+            data={stadiumData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
+          <CustomCarousel
+            className={css.carousel}
+            data={stadiumData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
+          <CustomCarousel
+            className={css.carousel}
+            data={stadiumData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
         </div>
       </section>
 
@@ -313,6 +334,6 @@ export default function PageHome() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
