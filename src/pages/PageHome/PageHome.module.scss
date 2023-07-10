@@ -106,11 +106,13 @@
   .statistics {
     width: 100vw;
     @include topBottomPadding;
+    @include leftRightPadding;
 
     .title {
       color: $black;
       font-size: 2.6rem;
       @include leftRightPadding;
+      margin: 10rem 0 0;
 
       @include media-tabletSm {
         font-size: 3.2rem;
@@ -148,20 +150,11 @@
         }
       }
     }
-
-    .carousels {
-      margin: 150px 0 0;
-
-      .carousel {
-        margin: 100px 0 0;
-      }
-    }
   }
 
   .footballHistory {
     width: 100vw;
     @include topBottomPadding;
-    @include leftRightPadding;
 
     .title {
       color: $black;
@@ -179,123 +172,16 @@
       }
     }
 
-    .grid {
-      margin: 5rem 0 0;
+    .carousels {
+      margin: 150px 0 0;
 
-      display: grid;
-      gap: 1rem;
-      grid-auto-columns: 1fr;
-      grid-template-areas:
-        "one one"
-        "two three"
-        "four five"
-        "six six"
-        "seven seven";
-
-      @include media-tabletSm {
-        grid-template-areas:
-          "one one two"
-          "three four four"
-          "five five six"
-          "seven seven seven";
-      }
-
-      @include media-desktopSm {
-        grid-template-areas:
-          "one one one two"
-          "three four four five"
-          "three six seven seven";
-      }
-
-      .photo {
-        position: relative;
-        overflow: hidden;
-
-        opacity: 0;
-        transform: translateY(2.5rem);
-        transform: scale(0.7);
-
-        &:nth-child(1) {
-          grid-area: one;
-          aspect-ratio: 16/9;
-        }
-        &:nth-child(2) {
-          grid-area: two;
-        }
-        &:nth-child(3) {
-          grid-area: three;
-        }
-        &:nth-child(4) {
-          grid-area: four;
-        }
-        &:nth-child(5) {
-          grid-area: five;
-        }
-        &:nth-child(6) {
-          grid-area: six;
-        }
-        &:nth-child(7) {
-          grid-area: seven;
-        }
-
-        .img {
-          height: 100%;
-          object-fit: cover;
-          transition: 1s transform ease;
-        }
-
-        &:hover {
-          .img {
-            transform: scale(1.1);
-          }
-        }
-
-        .gradient {
-          position: absolute;
-          z-index: 2;
-          right: 0;
-          bottom: 0;
-          padding: 4rem 1rem 1rem;
-          width: 100%;
-          background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), rgb(#000, 0.7));
-
-          @include media-tabletSm {
-            padding: 5rem 2rem 2rem;
-          }
-
-          p {
-            text-align: end;
-            font-size: 1.5rem;
-            font-weight: 500;
-          }
-        }
+      .carousel {
+        margin: 100px 0 0;
       }
     }
 
-    .readMore {
-      .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-
-        width: 15rem;
-        margin: 2.5rem 0 0 auto;
-        padding: 0.8em 1em;
-
-        font-weight: 600;
-        border-radius: 2rem;
-        text-transform: uppercase;
-
-        color: $white;
-        background: rgb(29, 29, 29);
-        transition: 0.25s background, 0.25s color;
-
-        &:hover {
-          background: $blue;
-          color: rgb(29, 29, 29);
-        }
-      }
+    .grid {
+      @include leftRightPadding;
     }
   }
 

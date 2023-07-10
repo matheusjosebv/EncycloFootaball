@@ -2,12 +2,6 @@ import gsap from "gsap";
 import css from "./PageHome.module.scss";
 import useLayout from "../../hooks/useLayout.jsx";
 
-import tacticImg from "../../assets/imgs/tactic.jpeg";
-import heroImg from "../../assets/imgs/liam-mckay-QYeEoTv6Gbw-unsplash.jpg";
-import aboutImg1 from "../../assets/imgs/matthieu-joannon-JUS82ClcfLw-unsplash.jpg";
-import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
-import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
-
 import Hero from "../../components/Hero/Hero";
 import Media from "../../components/Media/Media";
 import LinkCard from "../../components/LinkCard/LinkCard";
@@ -15,38 +9,34 @@ import NumberBox from "../../components/NumberBox/NumberBox";
 import TextHeading from "../../components/TextHeading/TextHeading";
 import CustomCarousel from "../../components/CustomCarousel/CustomCarousel";
 
+import tacticImg from "../../assets/imgs/tactic.jpeg";
+import heroImg from "../../assets/imgs/stadiums/liam-mckay-QYeEoTv6Gbw-unsplash.jpg";
+import aboutImg1 from "../../assets/imgs/supporters/matthieu-joannon-JUS82ClcfLw-unsplash.jpg";
+import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
+import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
+
 import { MdStadium } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
 import { TbPlayFootball } from "react-icons/tb";
 import { FaPeopleArrows } from "react-icons/fa";
 import { BsFillFlagFill } from "react-icons/bs";
 
-import stadiumData from "../../data/carouselStadium";
+import stadiumsData from "../../data/stadiumsList";
+import managersData from "../../data/managersList";
+import playersData from "../../data/playersList";
 import { useEffect, useRef } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import CustomGrid from "../../components/CustomGrid/CustomGrid";
 
 export default function PageHome() {
   const layout = useLayout();
 
   const elsRef = useRef();
-  const gridRef = useRef();
   const fieldRef = useRef();
   const gridTitleRef = useRef();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    const gridTl = gsap
-      .timeline({ scrollTrigger: { trigger: gridRef.current, start: "top 55%" } })
-      .to(gridTitleRef.current, { opacity: 1, y: 0 })
-      .to(gridRef.current.children, {
-        y: 0,
-        opacity: 1,
-        duration: 1.8,
-        stagger: 0.2,
-        scale: 1,
-        ease: "expo",
-      });
 
     const fieldTl = gsap
       .timeline({ scrollTrigger: { trigger: fieldRef.current, start: "top 60%" } })
@@ -54,7 +44,6 @@ export default function PageHome() {
       .to(elsRef.current.children, { stagger: 0.15, scale: 1, ease: "back" });
 
     return () => {
-      gridTl.kill();
       fieldTl.kill();
     };
   }, []);
@@ -170,6 +159,10 @@ export default function PageHome() {
       </section>
 
       <section className={css.statistics} data-nav-label="artitles" data-nav-color="RED">
+        <h1 className={css.title}>Some Football Legends:</h1>
+
+        <CustomGrid className={css.grid} btnLink="/players" animate data={playersData} />
+
         <h1 className={css.title}>Some Articles You May Want To Read:</h1>
 
         <div className={css.linkCards}>
@@ -202,33 +195,6 @@ export default function PageHome() {
             paragraph="Read about the incredible history of the biggest football competition in the world"
           />
         </div>
-
-        <div className={css.carousels}>
-          <CustomCarousel
-            className={css.carousel}
-            data={stadiumData}
-            animate
-            title="See the full Stadium list"
-            btnLabel="Read More"
-            btnHref="/statistics"
-          />
-          <CustomCarousel
-            className={css.carousel}
-            data={stadiumData}
-            animate
-            title="See the full Stadium list"
-            btnLabel="Read More"
-            btnHref="/statistics"
-          />
-          <CustomCarousel
-            className={css.carousel}
-            data={stadiumData}
-            animate
-            title="See the full Stadium list"
-            btnLabel="Read More"
-            btnHref="/statistics"
-          />
-        </div>
       </section>
 
       <section
@@ -236,58 +202,34 @@ export default function PageHome() {
         data-nav-label="I dont know yet"
         data-nav-color="WHITE"
       >
-        <h1 ref={gridTitleRef} className={css.title}>
-          Some Football Legends:
-        </h1>
-
-        <div ref={gridRef} className={css.grid}>
-          <div className={css.photo}>
-            <img className={css.img} src={`/src/assets/imgs/pele.jpeg`} />
-            <div className={css.gradient}>
-              <p>Pelé</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/F0bjluXXoAAUiPt.jpeg"} />
-            <div className={css.gradient}>
-              <p>Lionel Messi</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/zinedine-zidane.webp"} />
-            <div className={css.gradient}>
-              <p>Zinedine Zidane</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/maradona.jpeg"} />
-            <div className={css.gradient}>
-              <p>Diego Maradona</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/ronaldo.jpeg"} />
-            <div className={css.gradient}>
-              <p>Ronaldo</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/cruyff.jpeg"} />
-            <div className={css.gradient}>
-              <p>Johan Cruyff</p>
-            </div>
-          </div>
-          <div className={css.photo}>
-            <img className={css.img} src={"/src/assets/imgs/cristiano-ronaldo.jpeg"} />
-            <div className={css.gradient}>
-              <p>Cristiano Ronaldo</p>
-            </div>
-          </div>
+        <div className={css.carousels}>
+          <CustomCarousel
+            className={css.carousel}
+            data={stadiumsData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
+          <CustomCarousel
+            className={css.carousel}
+            data={managersData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
+          <CustomCarousel
+            className={css.carousel}
+            data={playersData}
+            animate
+            title="See the full Stadium list"
+            btnLabel="Read More"
+            btnHref="/statistics"
+          />
         </div>
 
-        <div className={css.readMore}>
-          <button className={css.btn}>Read More</button>
-        </div>
+        <CustomGrid className={css.grid} btnLink="/players" animate data={managersData} />
       </section>
 
       <section className={css.squadBuilder} data-nav-label="Squad Builder" data-nav-color="BLUE">

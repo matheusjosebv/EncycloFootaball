@@ -9,10 +9,12 @@ import Context from "../../hooks/Context";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
+import useLayout from "../../hooks/useLayout";
 
 export default function CustomCarousel({ className, data, animate, title, btnLabel, btnHref }) {
   const { navbarTheme } = useContext(Context);
   const rootRef = useRef();
+  const layout = useLayout();
 
   const settings = {
     dots: true,
@@ -61,14 +63,58 @@ export default function CustomCarousel({ className, data, animate, title, btnLab
                   className={css.img}
                   src={item.img}
                   style={{
-                    borderLeft: `20px solid ${color}`,
-                    borderRight: `20px solid ${color}`,
+                    borderLeft: `1.25rem solid ${color}`,
+                    borderRight: `1.25rem solid ${color}`,
                   }}
                 />
                 <div className={css.content}>
-                  <h1 className={css.name}>{item.title}</h1>
-                  <p className={css.capacity}>{item.capacity}</p>
-                  <p className={css.location}>{item.location}</p>
+                  {layout.mobile && <h1 className={css.name}>{item.name}</h1>}
+                  {!layout.mobile && (
+                    <>
+                      <h1 className={css.name}>{item.name}</h1>
+                      {item.capacity && (
+                        <p className={css.capacity}>
+                          <span>Capacity:</span>
+                          {item.capacity}
+                        </p>
+                      )}
+                      {item.location && (
+                        <p className={css.location}>
+                          <span>Location:</span>
+                          {item.location}
+                        </p>
+                      )}
+                      {item.team && (
+                        <p className={css.location}>
+                          <span>Team:</span>
+                          {item.team}
+                        </p>
+                      )}
+                      {item.nationality && (
+                        <p className={css.nationality}>
+                          <span>Nationality:</span>
+                          {item.nationality}
+                        </p>
+                      )}
+                      {item.position && (
+                        <p className={css.position}>
+                          <span>Position:</span>
+                          {item.position}
+                        </p>
+                      )}
+                      {item.titles && (
+                        <p className={css.titles}>
+                          <span>Titles:</span>
+                          {item.titles}
+                        </p>
+                      )}
+                      {item.currentTeam && (
+                        <p className={css.currentTeam}>
+                          <span>Current Team:</span> {item.currentTeam}
+                        </p>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             </div>
