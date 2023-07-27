@@ -1,0 +1,56 @@
+@import "../../styles/shared.scss";
+
+.root {
+  position: relative;
+  overflow: hidden;
+
+  padding: 2rem 4rem;
+  border-radius: 15%;
+  border: 1px solid $gray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: scale 0.35s ease-in-out, background 0.35s ease-in-out, border 0.35s ease-in-out;
+
+  cursor: pointer;
+  box-sizing: border-box;
+
+  .img {
+    border-radius: 50%;
+    border: 0.3rem solid black;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  .name {
+    margin: 2.25rem 0 0;
+    font-size: 2rem;
+  }
+
+  .titles {
+    margin: 2.25rem 0 0;
+
+    display: flex;
+    gap: 0.25rem;
+
+    .trophy {
+      width: 2.5rem;
+    }
+  }
+
+  .gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.66s opacity;
+    z-index: -1;
+  }
+
+  &:hover {
+    scale: 1.033;
+    border: none;
+  }
+}

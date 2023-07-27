@@ -1,46 +1,49 @@
 import gsap from "gsap";
 import css from "./PageHome.module.scss";
+import { useEffect, useRef } from "react";
 import useLayout from "../../hooks/useLayout.jsx";
-
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// COMPONENTS
 import Hero from "../../components/Hero/Hero";
 import Media from "../../components/Media/Media";
 import LinkCard from "../../components/LinkCard/LinkCard";
+import TeamCard from "../../components/TeamCard/TeamCard";
 import NumberBox from "../../components/NumberBox/NumberBox";
+import CustomGrid from "../../components/CustomGrid/CustomGrid";
 import TextHeading from "../../components/TextHeading/TextHeading";
 import CustomCarousel from "../../components/CustomCarousel/CustomCarousel";
-
+// IMAGES
 import tacticImg from "../../assets/imgs/tactic.jpeg";
 import heroImg from "../../assets/imgs/stadiums/liam-mckay-QYeEoTv6Gbw-unsplash.jpg";
-import aboutImg1 from "../../assets/imgs/supporters/matthieu-joannon-JUS82ClcfLw-unsplash.jpg";
+import WCImg from "../../assets/imgs/world-cup.webp";
+import momentImg from "../../assets/imgs/legendary-moment-1.webp";
+import aboutImg1 from "../../assets/imgs/materazzi-and-rui-costa.jpeg";
 import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
 import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
-
+// ICONS
 import { MdStadium } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
 import { TbPlayFootball } from "react-icons/tb";
 import { FaPeopleArrows } from "react-icons/fa";
 import { BsFillFlagFill } from "react-icons/bs";
-
+// DATA
 import stadiumsData from "../../data/stadiumsList";
 import managersData from "../../data/managersList";
 import playersData from "../../data/playersList";
-import { useEffect, useRef } from "react";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import CustomGrid from "../../components/CustomGrid/CustomGrid";
+import WCChampionsData from "../../data/nationalTeamsList";
 
 export default function PageHome() {
   const layout = useLayout();
-
   const elsRef = useRef();
+  const imgRef = useRef();
   const fieldRef = useRef();
-  const gridTitleRef = useRef();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const fieldTl = gsap
       .timeline({ scrollTrigger: { trigger: fieldRef.current, start: "top 60%" } })
-      .to(fieldRef.current.firstChild, { opacity: 1, y: 0 })
+      .to(imgRef.current, { opacity: 1, y: 0 })
       .to(elsRef.current.children, { stagger: 0.15, scale: 1, ease: "back" });
 
     return () => {
@@ -168,7 +171,7 @@ export default function PageHome() {
         <div className={css.linkCards}>
           <LinkCard
             animate
-            imgSrc={heroImg}
+            imgSrc={WCImg}
             className={css.linkCard}
             title="World Cup History"
             paragraph="Read about the incredible history of the biggest football competition in the world"
@@ -188,7 +191,7 @@ export default function PageHome() {
           <LinkCard
             animate
             horizontal={(layout.tabletLg || layout.desktopSm) && true}
-            imgSrc={heroImg}
+            imgSrc={momentImg}
             className={css.linkCard}
             btnLabel="Read more"
             title="Legendary Moments"
@@ -232,46 +235,64 @@ export default function PageHome() {
         <CustomGrid className={css.grid} btnLink="/players" animate data={managersData} />
       </section>
 
-      <section className={css.squadBuilder} data-nav-label="Squad Builder" data-nav-color="BLUE">
+      <section className={css.worldCup} data-nav-label="Squad Builder" data-nav-color="BLUE">
+        <div className={css.champions}>
+          {WCChampionsData.map((i, idx) => {
+            return (
+              <div key={idx} className={css.el}>
+                <TeamCard
+                  className={css.teamCard}
+                  name={i.name}
+                  img={i.img}
+                  titles={i.titles}
+                  gradient={`var(--${i.name.toLowerCase()}-gradient)`}
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        <h1>Squad Builder</h1>
+
         <div className={css.field} ref={fieldRef}>
-          <img className={css.img} src="/src/assets/imgs/field.png" />
+          <img ref={imgRef} className={css.img} src="/src/assets/imgs/field.png" />
 
           <div ref={elsRef} className={css.els}>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="/src/assets/imgs/zidane.png" className={css.player} />
+              <img src="/src/assets/imgs/players/zidane-headshot.png" className={css.player} />
             </div>
           </div>
         </div>

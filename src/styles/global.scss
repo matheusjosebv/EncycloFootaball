@@ -3,6 +3,45 @@
 @import "vars";
 @import "mixins";
 
+:root {
+  --white: #fff;
+
+  --brazil-primary-color: rgb(0, 156, 59);
+  --brazil-secondary-color: rgb(255, 223, 0);
+  --brazil-gradient: linear-gradient(var(--brazil-primary-color), var(--brazil-secondary-color));
+
+  --italy-primary-color: rgb(0, 123, 255);
+  --italy-secondary-color: white;
+  --italy-gradient: linear-gradient(var(--italy-primary-color), var(--italy-secondary-color));
+
+  --germany-primary-color: rgb(222, 0, 0);
+  --germany-secondary-color: rgb(254, 206, 0);
+  --germany-gradient: linear-gradient(var(--germany-primary-color), var(--germany-secondary-color));
+
+  --argentina-primary-color: rgb(116, 172, 223);
+  --argentina-secondary-color: white;
+  --argentina-gradient: linear-gradient(
+    var(--argentina-primary-color),
+    var(--argentina-secondary-color)
+  );
+
+  --uruguay-primary-color: rgb(0, 55, 168);
+  --uruguay-secondary-color: white;
+  --uruguay-gradient: linear-gradient(var(--uruguay-primary-color), var(--uruguay-secondary-color));
+
+  --france-primary-color: rgb(0, 36, 150);
+  --france-secondary-color: rgb(238, 41, 58);
+  --france-gradient: linear-gradient(var(--france-primary-color), var(--france-secondary-color));
+
+  --england-primary-color: white;
+  --england-secondary-color: rgb(206, 16, 37);
+  --england-gradient: linear-gradient(var(--england-primary-color), var(--england-secondary-color));
+
+  --spain-primary-color: rgb(198, 11, 31);
+  --spain-secondary-color: rgb(254, 196, 0);
+  --spain-gradient: linear-gradient(var(--spain-primary-color), var(--spain-secondary-color));
+}
+
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;

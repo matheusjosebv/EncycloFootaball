@@ -185,18 +185,63 @@
     }
   }
 
-  .squadBuilder {
+  .worldCup {
     width: 100vw;
     @include topBottomPadding;
     @include leftRightPadding;
 
+    .champions {
+      display: grid;
+      margin: 5rem 0 0;
+      gap: 2.5rem;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+
+      @include media-tabletSm {
+        gap: 3.5rem;
+        margin: 7rem 0 0;
+      }
+
+      @include media-tabletLg {
+        margin: 10rem 0 0;
+      }
+
+      @include media-desktopSm {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5.5rem;
+      }
+
+      @include media-desktopMd {
+        margin: 15rem 0 0;
+        gap: 7rem;
+      }
+
+      .el {
+        position: relative;
+
+        .teamCard {
+          position: relative;
+          z-index: 1;
+
+          background-color: $white;
+          color: $black;
+        }
+
+        // .gradient {
+        //   position: absolute;
+        //   inset: 0;
+        //   transition: 1s opacity;
+        //   z-index: 0;
+        // }
+      }
+    }
+
     .field {
       position: relative;
-      margin: 0 0 0 auto;
+      margin: 10rem 0 0 auto;
       width: 420px;
 
       .img {
-        position: absolute;
         aspect-ratio: 3/4;
         opacity: 0;
         transform: translateY(2.5rem);
