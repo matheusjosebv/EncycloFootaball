@@ -171,7 +171,7 @@ export default function Navbar() {
     const labels = sec.map((s) => s.getAttribute("data-nav-label"));
     setSubnavLabels(labels);
 
-    return () => {};
+    // return () => {};
   }, [resolvedPath]);
 
   useEffect(() => {

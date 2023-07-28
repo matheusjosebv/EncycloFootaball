@@ -2,7 +2,7 @@
 
 .root {
   .grid {
-    margin: 5rem 0 0;
+    // margin: 5rem 0 0;
 
     display: grid;
     gap: 1rem;
@@ -36,6 +36,7 @@
       opacity: 0;
       transform: translateY(2.5rem);
       transform: scale(0.7);
+      cursor: pointer;
 
       &:nth-child(1) {
         grid-area: one;
@@ -66,9 +67,20 @@
         transition: 1s transform ease;
       }
 
+      .hoverBg {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: 0.5s opacity;
+      }
+
       &:hover {
         .img {
           transform: scale(1.1);
+        }
+
+        .hoverBg {
+          opacity: 0.25;
         }
       }
 
@@ -112,12 +124,12 @@
       border-radius: 2rem;
       text-transform: uppercase;
 
-      color: $white;
+      color: var(--white);
       background: rgb(29, 29, 29);
       transition: 0.25s background, 0.25s color;
 
       &:hover {
-        background: $blue;
+        background: var(--blue);
         color: rgb(29, 29, 29);
       }
     }

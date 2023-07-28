@@ -1,6 +1,80 @@
 @import "../../styles/shared.scss";
 
-.root {
-  height: 400px;
-  background-color: $black;
+.footer {
+  background-color: var(--black);
+  @include topBottomPadding;
+
+  @include media-desktopSm {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .links {
+    display: grid;
+    gap: 5rem;
+    align-items: start;
+    @include leftRightPadding;
+
+    @include media-tabletSm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-tabletLg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media-desktopSm {
+      padding-right: 0;
+    }
+
+    .container {
+      display: grid;
+      gap: 0.5rem;
+      text-align: center;
+
+      @include media-tabletSm {
+        text-align: left;
+      }
+
+      .link {
+      }
+    }
+  }
+
+  .socialMedias {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 5rem 0 0;
+    margin: 5rem 0 0;
+    border-top: 1px solid var(--gray);
+
+    @include media-tabletLg {
+      padding: 7.5rem 0 0;
+      margin: 7.5rem 0 0;
+      gap: 4rem;
+    }
+
+    @include media-desktopSm {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 5rem;
+      margin: 0;
+      border-top: none;
+      border-left: 1px solid var(--gray);
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 }

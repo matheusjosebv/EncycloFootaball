@@ -31,7 +31,7 @@
         margin: 0 0 0 5rem;
 
         text-align: right;
-        background: rgb($white, 0.9);
+        background-color: rgb(white, 0.9);
 
         @include media-tabletSm {
           max-width: 300px;
@@ -43,7 +43,7 @@
         .name {
           font-size: 1.5rem;
           font-weight: 700;
-          color: $black;
+          color: var(--black);
 
           @include media-tabletSm {
             font-size: 2.2rem;
@@ -53,7 +53,7 @@
 
         > p {
           font-size: 1.2rem;
-          color: $black;
+          color: var(--black);
           margin: 0.5rem 0 0;
 
           @include media-tabletSm {
@@ -93,7 +93,7 @@
       font-size: 2.2rem;
       font-weight: 700;
 
-      color: $black;
+      color: var(--black);
 
       // opacity: 0;
       // transform: translateY(2.5rem);
@@ -113,7 +113,7 @@
       border-radius: 2rem;
       text-transform: uppercase;
 
-      color: $white;
+      color: var(--white);
       background: rgb(29, 29, 29);
       transition: 0.25s background, 0.25s color;
 
@@ -121,7 +121,7 @@
       // transform: translateY(2.5rem);
 
       &:hover {
-        background: $white;
+        background: var(--white);
         color: rgb(29, 29, 29);
       }
     }

@@ -68,13 +68,13 @@
       text-transform: uppercase;
 
       opacity: 0;
-      color: $white;
+      color: var(--white);
       transform: translateY(2.5rem);
       background: rgb(29, 29, 29);
       transition: 0.25s background, 0.25s color;
 
       &:hover {
-        background: $white;
+        background: var(--white);
         color: rgb(29, 29, 29);
       }
     }

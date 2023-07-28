@@ -17,9 +17,9 @@ export default function TeamCard({ className, gradient, img, name, titles }) {
       <h1 className={css.name}>{name}</h1>
 
       <div className={css.titles}>
-        {titles.map((i) => (
+        {titles.map((i, idx) => (
           <img
-            key={i.titles}
+            key={idx}
             className={css.trophy}
             src="/src/assets/imgs/trophy.png"
             alt={titles.length + "titles"}

@@ -5,7 +5,7 @@
 
   &:hover {
     .route {
-      color: $white;
+      color: var(--white);
     }
 
     .underline {
@@ -19,7 +19,7 @@
     text-transform: uppercase;
 
     cursor: pointer;
-    color: $red;
+    color: var(--red);
     transition: 0.2s color;
 
     @include media-tabletSm {
@@ -35,7 +35,7 @@
     width: 100%;
     height: 1px;
     margin: 2px 0 0;
-    background: $white;
+    background: var(--white);
 
     transform: scaleX(0);
     transform-origin: 0 50%;
@@ -45,7 +45,7 @@
 
 .active {
   .route {
-    color: $white;
+    color: var(--white);
   }
 
   .underline {
@@ -57,20 +57,20 @@
   &.active,
   &:hover {
     .route {
-      color: rgb($black, 1);
+      color: rgb(var(--black), 1);
     }
 
     .underline {
-      background: rgb($black, 1);
+      background: rgb(var(--black), 1);
     }
   }
 
   .route {
-    color: $dark-blue;
+    color: var(--dark-blue);
   }
 
   .underline {
-    background: $dark-blue;
+    background: var(--dark-blue);
   }
 }
 
@@ -78,20 +78,20 @@
   &.active,
   &:hover {
     .route {
-      color: $white;
+      color: var(--white);
     }
 
     .underline {
-      background: $white;
+      background: var(--white);
     }
   }
 
   .route {
-    color: $black;
+    color: var(--black);
   }
 
   .underline {
-    background: $black;
+    background: var(--black);
   }
 }
 
@@ -99,19 +99,19 @@
   &.active,
   &:hover {
     .route {
-      color: $white;
+      color: var(--white);
     }
 
     .underline {
-      background: $white;
+      background: var(--white);
     }
   }
 
   .route {
-    color: $black;
+    color: var(--black);
   }
 
   .underline {
-    background: $black;
+    background: var(--black);
   }
 }

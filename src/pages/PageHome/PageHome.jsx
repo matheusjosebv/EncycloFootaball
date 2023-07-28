@@ -17,7 +17,7 @@ import tacticImg from "../../assets/imgs/tactic.jpeg";
 import heroImg from "../../assets/imgs/stadiums/liam-mckay-QYeEoTv6Gbw-unsplash.jpg";
 import WCImg from "../../assets/imgs/world-cup.webp";
 import momentImg from "../../assets/imgs/legendary-moment-1.webp";
-import aboutImg1 from "../../assets/imgs/materazzi-and-rui-costa.jpeg";
+import aboutImg1 from "../../assets/imgs/materazzi-e-rui-costa.jpeg";
 import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
 import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
 // ICONS
@@ -161,10 +161,20 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section className={css.statistics} data-nav-label="artitles" data-nav-color="RED">
+      <section
+        className={css.statistics}
+        data-nav-label="Unforgettable Legends"
+        data-nav-color="RED"
+      >
         <h1 className={css.title}>Some Football Legends:</h1>
 
-        <CustomGrid className={css.grid} btnLink="/players" animate data={playersData} />
+        <CustomGrid
+          className={css.grid}
+          hoverColor="var(--red)"
+          btnLink="/players"
+          animate
+          data={playersData}
+        />
 
         <h1 className={css.title}>Some Articles You May Want To Read:</h1>
 
@@ -214,7 +224,7 @@ export default function PageHome() {
             btnLabel="Read More"
             btnHref="/statistics"
           />
-          <CustomCarousel
+          {/* <CustomCarousel
             className={css.carousel}
             data={managersData}
             animate
@@ -229,10 +239,16 @@ export default function PageHome() {
             title="See the full Stadium list"
             btnLabel="Read More"
             btnHref="/statistics"
-          />
+          /> */}
         </div>
 
-        <CustomGrid className={css.grid} btnLink="/players" animate data={managersData} />
+        <CustomGrid
+          className={css.grid}
+          hoverColor="var(--white)"
+          btnLink="/players"
+          animate
+          data={managersData}
+        />
       </section>
 
       <section className={css.worldCup} data-nav-label="Squad Builder" data-nav-color="BLUE">

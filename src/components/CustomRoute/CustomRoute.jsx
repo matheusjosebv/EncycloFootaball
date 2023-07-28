@@ -22,7 +22,7 @@ export default function CustomRoute({ className, to, name, ...props }) {
       )}
     >
       <Link to={to} {...props}>
-        <p className={classNames(css.route)}>{name}</p>
+        <p className={css.route}>{name}</p>
         <div className={css.underline} />
       </Link>
     </div>

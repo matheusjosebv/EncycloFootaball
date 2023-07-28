@@ -109,10 +109,8 @@
     @include leftRightPadding;
 
     .title {
-      color: $black;
+      color: var(--black);
       font-size: 2.6rem;
-      @include leftRightPadding;
-      margin: 10rem 0 0;
 
       @include media-tabletSm {
         font-size: 3.2rem;
@@ -123,10 +121,28 @@
       }
     }
 
+    .grid {
+      padding: 7.5rem 0;
+    }
+
     .linkCards {
-      @include leftRightPadding;
+      padding: 7.5rem 0;
       display: grid;
       justify-content: center;
+
+      gap: 5rem;
+
+      @include media-tabletSm {
+        gap: 7.5rem;
+      }
+
+      @include media-tabletLg {
+        gap: 10rem;
+      }
+
+      @include media-desktopSm {
+        gap: 12.5rem;
+      }
 
       @include media-desktopMd {
         grid-template-columns: 1fr 1fr 1fr;
@@ -134,20 +150,7 @@
       }
 
       .linkCard {
-        margin: 50px 0 0;
-        color: $black;
-
-        @include media-tabletSm {
-          margin: 75px 0 0;
-        }
-
-        @include media-tabletLg {
-          margin: 100px 0 0;
-        }
-
-        @include media-desktopSm {
-          margin: 125px 0 0;
-        }
+        color: var(--black);
       }
     }
   }
@@ -157,7 +160,7 @@
     @include topBottomPadding;
 
     .title {
-      color: $black;
+      color: var(--black);
       font-size: 2.6rem;
 
       opacity: 0;
@@ -223,8 +226,8 @@
           position: relative;
           z-index: 1;
 
-          background-color: $white;
-          color: $black;
+          background-color: var(--white);
+          color: var(--black);
         }
 
         // .gradient {
@@ -253,7 +256,7 @@
           transform: scale(0);
 
           .player {
-            background: $white;
+            background: var(--white);
             width: 6rem;
             height: 6rem;
             border-radius: 50%;

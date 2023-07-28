@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import css from "./CustomGrid.module.scss";
 
-export default function CustomGrid({ className, btnLink, data, animate }) {
+export default function CustomGrid({ className, btnLink, data, animate, hoverColor }) {
   const rootRef = useRef();
   const gridRef = useRef();
 
@@ -43,6 +43,7 @@ export default function CustomGrid({ className, btnLink, data, animate }) {
               <div className={css.gradient}>
                 <p>{item.name}</p>
               </div>
+              <div className={css.hoverBg} style={{ backgroundColor: hoverColor }} />
             </div>
           );
         })}

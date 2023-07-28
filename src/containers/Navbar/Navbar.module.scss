@@ -11,10 +11,10 @@
   transition: 0.7s background;
 
   &.navbarBg {
-    background: rgb($black, 0.8);
+    background: rgb(var(--black), 0.8);
 
     @include media-desktopSm {
-      background: rgb($black, 0);
+      background: rgb(var(--black), 0);
     }
   }
 
@@ -89,17 +89,17 @@
         .text {
           display: flex;
           flex-direction: column;
-          background: $red;
+          background: var(--red);
           border-radius: 50%;
           padding: 7px;
-          color: $black;
+          color: var(--black);
           transition: 0.2s background;
         }
 
         .football {
           width: 40px;
           height: 40px;
-          color: $red;
+          color: var(--red);
           transition: 0.2s color;
 
           @include media-tabletSm {
@@ -114,11 +114,11 @@
 
         &:hover {
           .text {
-            background: rgb($red, 0.7);
+            background: rgb(var(--red), 0.7);
           }
 
           .football {
-            color: rgb($red, 0.7);
+            color: rgb(var(--red), 0.7);
           }
         }
       }
@@ -141,7 +141,7 @@
         }
 
         .route {
-          color: $red;
+          color: var(--red);
           font-size: 1.3rem;
           cursor: pointer;
           transition: 0.2s color;
@@ -154,7 +154,7 @@
           }
 
           &:hover {
-            color: $white;
+            color: var(--white);
           }
         }
       }
@@ -163,18 +163,18 @@
         display: none;
         align-items: center;
         gap: 5px;
-        color: $red;
+        color: var(--red);
         margin: 0 0 0 25px;
 
         &:hover {
-          color: $white;
+          color: var(--white);
 
           .input {
-            color: $white;
-            border: 1px solid $white;
+            color: var(--white);
+            border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb($white, 0.75);
+              color: rgb(var(--white), 0.75);
             }
           }
         }
@@ -199,15 +199,15 @@
           padding: 5px 7px;
           border-radius: 10px;
           background: transparent;
-          border: 1px solid $red;
+          border: 1px solid var(--red);
           outline: none;
-          color: $red;
+          color: var(--red);
 
           opacity: 0;
           transition: 0.2s color, 0.2s border;
 
           &::placeholder {
-            color: rgb($dark-red, 1);
+            color: rgb(var(--dark-red), 1);
             transition: 0.2s color;
           }
 
@@ -237,7 +237,7 @@
         }
 
         .icon {
-          color: $red;
+          color: var(--red);
           width: 20px;
           height: 20px;
           transition: 0.2s color;
@@ -301,14 +301,14 @@
       }
 
       .section {
-        color: $red;
+        color: var(--red);
         font-weight: 600;
         text-transform: uppercase;
         cursor: pointer;
         transition: 0.2s color;
 
         &:hover {
-          color: $white;
+          color: var(--white);
         }
       }
     }
@@ -320,13 +320,13 @@
     background: transparent;
 
     .navbar {
-      background: rgb($white, 0.95);
+      background: rgb(var(--white), 0.95);
     }
   }
 
   .navbar {
     .gradient {
-      background: linear-gradient(180deg, $white calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+      background: linear-gradient(180deg, var(--white) calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
 
       &.activeGradient {
         opacity: 0.95;
@@ -336,21 +336,21 @@
     .left {
       .logo {
         .text {
-          background: $dark-blue;
-          color: $white;
+          background: var(--dark-blue);
+          color: var(--white);
         }
 
         .football {
-          color: $dark-blue;
+          color: var(--dark-blue);
         }
 
         &:hover {
           .text {
-            background: $black;
+            background: var(--black);
           }
 
           .football {
-            color: $black;
+            color: var(--black);
           }
         }
       }
@@ -359,32 +359,32 @@
     .right {
       .routes {
         .route {
-          color: $dark-blue;
+          color: var(--dark-blue);
         }
       }
 
       .search {
-        color: $dark-blue;
+        color: var(--dark-blue);
 
         &:hover {
-          color: $black;
+          color: var(--black);
 
           .input {
-            color: $black;
-            border: 1px solid $black;
+            color: var(--black);
+            border: 1px solid var(--black);
 
             &::placeholder {
-              color: rgb($black, 0.75);
+              color: rgb(var(--black), 0.75);
             }
           }
         }
 
         .input {
-          border: 1px solid $dark-blue;
-          color: $dark-blue;
+          border: 1px solid var(--dark-blue);
+          color: var(--dark-blue);
 
           &::placeholder {
-            color: rgb($dark-blue, 0.7);
+            color: rgb(var(--dark-blue), 0.7);
           }
         }
       }
@@ -392,31 +392,31 @@
       .mobileMenu {
         &:hover {
           .icon {
-            color: $black;
+            color: var(--black);
           }
         }
 
         .icon {
-          color: $dark-blue;
+          color: var(--dark-blue);
         }
       }
     }
 
     .borderBottom {
-      background: rgb($dark-blue, 0.2);
+      background: rgb(var(--dark-blue), 0.2);
     }
   }
 
   .subnav {
     .label {
-      color: $gray;
+      color: var(--gray);
     }
     .sections {
       .section {
-        color: $dark-blue;
+        color: var(--dark-blue);
 
         &:hover {
-          color: $black;
+          color: var(--black);
         }
       }
     }
@@ -428,33 +428,37 @@
     background: transparent;
 
     .navbar {
-      background: rgb($dark-red, 0.95);
+      background: rgb(var(--dark-red), 0.95);
     }
   }
 
   .navbar {
     .gradient {
-      background: linear-gradient(180deg, $dark-red calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+      background: linear-gradient(
+        180deg,
+        var(--dark-red) calc(100% - 2.5rem),
+        hsla(0, 0%, 100%, 0)
+      );
     }
 
     .left {
       .logo {
         .text {
-          background: $black;
-          color: $dark-red;
+          background: var(--black);
+          color: var(--dark-red);
         }
 
         .football {
-          color: $black;
+          color: var(--black);
         }
 
         &:hover {
           .text {
-            background: $white;
+            background: var(--white);
           }
 
           .football {
-            color: $white;
+            color: var(--white);
           }
         }
       }
@@ -463,55 +467,55 @@
     .right {
       .routes {
         .route {
-          color: $black;
+          color: var(--black);
         }
       }
 
       .search {
-        color: $black;
+        color: var(--black);
 
         &:hover {
-          color: $white;
+          color: var(--white);
 
           .input {
-            color: $white;
-            border: 1px solid $white;
+            color: var(--white);
+            border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb($white, 0.75);
+              color: rgb(var(--white), 0.75);
             }
           }
         }
 
         .input {
-          border: 1px solid $black;
-          color: $black;
+          border: 1px solid var(--black);
+          color: var(--black);
 
           &::placeholder {
-            color: rgb($black, 0.7);
+            color: rgb(var(--black), 0.7);
           }
         }
       }
 
       .mobileMenu {
         .icon {
-          color: $black;
+          color: var(--black);
         }
       }
     }
 
     .borderBottom {
-      background: rgb($black, 0.2);
+      background: rgb(var(--black), 0.2);
     }
   }
 
   .subnav {
     .sections {
       .section {
-        color: $black;
+        color: var(--black);
 
         &:hover {
-          color: $white;
+          color: var(--white);
         }
       }
     }
@@ -523,33 +527,37 @@
     background: transparent;
 
     .navbar {
-      background: rgb($dark-blue, 0.9);
+      background: rgb(var(--dark-blue), 0.9);
     }
   }
 
   .navbar {
     .gradient {
-      background: linear-gradient(180deg, $dark-blue calc(100% - 2.5rem), hsla(0, 0%, 100%, 0));
+      background: linear-gradient(
+        180deg,
+        var(--dark-blue) calc(100% - 2.5rem),
+        hsla(0, 0%, 100%, 0)
+      );
     }
 
     .left {
       .logo {
         .text {
-          background: $black;
-          color: $dark-blue;
+          background: var(--black);
+          color: var(--dark-blue);
         }
 
         .football {
-          color: $black;
+          color: var(--black);
         }
 
         &:hover {
           .text {
-            background: $white;
+            background: var(--white);
           }
 
           .football {
-            color: $white;
+            color: var(--white);
           }
         }
       }
@@ -558,55 +566,55 @@
     .right {
       .routes {
         .route {
-          color: $black;
+          color: var(--black);
         }
       }
 
       .search {
-        color: $black;
+        color: var(--black);
 
         &:hover {
-          color: $white;
+          color: var(--white);
 
           .input {
-            color: $white;
-            border: 1px solid $white;
+            color: var(--white);
+            border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb($white, 0.75);
+              color: rgb(var(--white), 0.75);
             }
           }
         }
 
         .input {
-          border: 1px solid $black;
-          color: $black;
+          border: 1px solid var(--black);
+          color: var(--black);
 
           &::placeholder {
-            color: rgb($black, 0.7);
+            color: rgb(var(--black), 0.7);
           }
         }
       }
 
       .mobileMenu {
         .icon {
-          color: $black;
+          color: var(--black);
         }
       }
     }
 
     .borderBottom {
-      background: rgb($black, 0.2);
+      background: rgb(var(--black), 0.2);
     }
   }
 
   .subnav {
     .sections {
       .section {
-        color: $black;
+        color: var(--black);
 
         &:hover {
-          color: $white;
+          color: var(--white);
         }
       }
     }

@@ -5,41 +5,51 @@
 
 :root {
   --white: #fff;
+  --gray: #848489;
+  --black: #000;
+  --red: #f16262;
+  --dark-red: #f05959;
+  --blue: #6cbaff;
+  --dark-blue: #4ea2ec;
 
-  --brazil-primary-color: rgb(0, 156, 59);
-  --brazil-secondary-color: rgb(255, 223, 0);
-  --brazil-gradient: linear-gradient(var(--brazil-primary-color), var(--brazil-secondary-color));
+  --brazil-color-1: rgb(0, 156, 59);
+  --brazil-color-2: rgb(255, 223, 0);
+  --brazil-color-3: rgb(0, 39, 118);
+  --brazil-gradient: linear-gradient(var(--brazil-color-1), var(--brazil-color-2));
 
-  --italy-primary-color: rgb(0, 123, 255);
-  --italy-secondary-color: white;
-  --italy-gradient: linear-gradient(var(--italy-primary-color), var(--italy-secondary-color));
+  --italy-color-1: rgb(0, 123, 255);
+  --italy-color-2: white;
+  --italy-gradient: linear-gradient(var(--italy-color-1), var(--italy-color-2));
 
-  --germany-primary-color: rgb(222, 0, 0);
-  --germany-secondary-color: rgb(254, 206, 0);
-  --germany-gradient: linear-gradient(var(--germany-primary-color), var(--germany-secondary-color));
+  --germany-color-1: rgb(222, 0, 0);
+  --germany-color-2: rgb(254, 206, 0);
+  --germany-color-3: black;
+  --germany-gradient: linear-gradient(var(--germany-color-1), var(--germany-color-2));
 
-  --argentina-primary-color: rgb(116, 172, 223);
-  --argentina-secondary-color: white;
-  --argentina-gradient: linear-gradient(
-    var(--argentina-primary-color),
-    var(--argentina-secondary-color)
+  --argentina-color-1: rgb(116, 172, 223);
+  --argentina-color-2: white;
+  --argentina-gradient: linear-gradient(var(--argentina-color-1), var(--argentina-color-2));
+
+  --uruguay-color-1: rgb(0, 55, 168);
+  --uruguay-color-2: white;
+  --uruguay-gradient: linear-gradient(var(--uruguay-color-1), var(--uruguay-color-2));
+
+  --france-color-1: rgb(0, 36, 150);
+  --france-color-2: rgb(238, 41, 58);
+  --france-color-3: white;
+  --france-gradient: linear-gradient(
+    var(--france-color-1),
+    var(--france-color-2),
+    var(--france-color-3) 90%
   );
 
-  --uruguay-primary-color: rgb(0, 55, 168);
-  --uruguay-secondary-color: white;
-  --uruguay-gradient: linear-gradient(var(--uruguay-primary-color), var(--uruguay-secondary-color));
+  --england-color-1: white;
+  --england-color-2: rgb(206, 16, 37);
+  --england-gradient: linear-gradient(var(--england-color-1) 35%, var(--england-color-2));
 
-  --france-primary-color: rgb(0, 36, 150);
-  --france-secondary-color: rgb(238, 41, 58);
-  --france-gradient: linear-gradient(var(--france-primary-color), var(--france-secondary-color));
-
-  --england-primary-color: white;
-  --england-secondary-color: rgb(206, 16, 37);
-  --england-gradient: linear-gradient(var(--england-primary-color), var(--england-secondary-color));
-
-  --spain-primary-color: rgb(198, 11, 31);
-  --spain-secondary-color: rgb(254, 196, 0);
-  --spain-gradient: linear-gradient(var(--spain-primary-color), var(--spain-secondary-color));
+  --spain-color-1: rgb(198, 11, 31);
+  --spain-color-2: rgb(254, 196, 0);
+  --spain-gradient: linear-gradient(var(--spain-color-1), var(--spain-color-2));
 }
 
 html {
@@ -55,8 +65,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: $black;
-  color: $white;
+  background-color: var(--black);
+  color: var(--white);
   word-break: keep-all;
 }
 
