@@ -11,10 +11,10 @@
   transition: 0.7s background;
 
   &.navbarBg {
-    background: rgb(var(--black), 0.8);
+    background: rgb($black, 0.8);
 
     @include media-desktopSm {
-      background: rgb(var(--black), 0);
+      background: rgb($black, 0);
     }
   }
 
@@ -114,11 +114,11 @@
 
         &:hover {
           .text {
-            background: rgb(var(--red), 0.7);
+            background: rgb($red, 0.7);
           }
 
           .football {
-            color: rgb(var(--red), 0.7);
+            color: rgb($red, 0.7);
           }
         }
       }
@@ -174,7 +174,7 @@
             border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb(var(--white), 0.75);
+              color: rgb($white, 0.75);
             }
           }
         }
@@ -207,7 +207,7 @@
           transition: 0.2s color, 0.2s border;
 
           &::placeholder {
-            color: rgb(var(--dark-red), 1);
+            color: rgb($dark-red, 1);
             transition: 0.2s color;
           }
 
@@ -320,7 +320,7 @@
     background: transparent;
 
     .navbar {
-      background: rgb(var(--white), 0.95);
+      background: rgb($white, 0.95);
     }
   }
 
@@ -374,7 +374,7 @@
             border: 1px solid var(--black);
 
             &::placeholder {
-              color: rgb(var(--black), 0.75);
+              color: rgb($black, 0.75);
             }
           }
         }
@@ -384,7 +384,7 @@
           color: var(--dark-blue);
 
           &::placeholder {
-            color: rgb(var(--dark-blue), 0.7);
+            color: rgb($dark-blue, 0.7);
           }
         }
       }
@@ -403,7 +403,7 @@
     }
 
     .borderBottom {
-      background: rgb(var(--dark-blue), 0.2);
+      background: rgb($dark-blue, 0.2);
     }
   }
 
@@ -428,7 +428,7 @@
     background: transparent;
 
     .navbar {
-      background: rgb(var(--dark-red), 0.95);
+      background: rgba(var(--dark-red), 0.95);
     }
   }
 
@@ -482,7 +482,7 @@
             border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb(var(--white), 0.75);
+              color: rgb($white, 0.75);
             }
           }
         }
@@ -492,7 +492,7 @@
           color: var(--black);
 
           &::placeholder {
-            color: rgb(var(--black), 0.7);
+            color: rgb($black, 0.7);
           }
         }
       }
@@ -505,7 +505,7 @@
     }
 
     .borderBottom {
-      background: rgb(var(--black), 0.2);
+      background: rgb($black, 0.2);
     }
   }
 
@@ -527,7 +527,7 @@
     background: transparent;
 
     .navbar {
-      background: rgb(var(--dark-blue), 0.9);
+      background: rgb($dark-blue, 0.9);
     }
   }
 
@@ -581,7 +581,7 @@
             border: 1px solid var(--white);
 
             &::placeholder {
-              color: rgb(var(--white), 0.75);
+              color: rgb($white, 0.75);
             }
           }
         }
@@ -591,7 +591,7 @@
           color: var(--black);
 
           &::placeholder {
-            color: rgb(var(--black), 0.7);
+            color: rgb($black, 0.7);
           }
         }
       }
@@ -604,7 +604,7 @@
     }
 
     .borderBottom {
-      background: rgb(var(--black), 0.2);
+      background: rgb($black, 0.2);
     }
   }
 

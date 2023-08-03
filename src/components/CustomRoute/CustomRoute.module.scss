@@ -57,11 +57,11 @@
   &.active,
   &:hover {
     .route {
-      color: rgb(var(--black), 1);
+      color: rgb($black, 1);
     }
 
     .underline {
-      background: rgb(var(--black), 1);
+      background: rgb($black, 1);
     }
   }
 

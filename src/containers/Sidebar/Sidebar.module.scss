@@ -13,7 +13,7 @@
   transform-origin: 0 0;
   transform: translateX(111vw);
   transition: transform 0.8s $sidebar-exit;
-  box-shadow: 0 0 5rem rgb(var(--black), 0.25);
+  box-shadow: 0 0 5rem rgb($black, 0.25);
 
   @include media-tabletSm {
     display: none;

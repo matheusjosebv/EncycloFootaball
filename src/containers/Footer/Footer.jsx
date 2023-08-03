@@ -62,18 +62,17 @@ export default function Footer() {
       </div>
 
       <div className={css.socialMedias}>
-        <FooterLink className={css.link} to="">
-          <FaFacebook className={css.icon} /> {(layout.desktopSm || layout.desktopMd) && "Facebook"}
+        <FooterLink className={css.link} to="https://www.facebook.com">
+          <FaFacebook className={css.icon} /> {layout.desktopMd && "Facebook"}
         </FooterLink>
-        <FooterLink className={css.link} to="">
-          <FaInstagram className={css.icon} />{" "}
-          {(layout.desktopSm || layout.desktopMd) && "Instagram"}
+        <FooterLink className={css.link} to="https://www.instagram.com">
+          <FaInstagram className={css.icon} /> {layout.desktopMd && "Instagram"}
         </FooterLink>
-        <FooterLink className={css.link} to="">
-          <FaYoutube className={css.icon} /> {(layout.desktopSm || layout.desktopMd) && "YouTube"}
+        <FooterLink className={css.link} to="https://www.youtube.com">
+          <FaYoutube className={css.icon} /> {layout.desktopMd && "YouTube"}
         </FooterLink>
-        <FooterLink className={css.link} to="">
-          <FaTwitter className={css.icon} /> {(layout.desktopSm || layout.desktopMd) && "Twitter"}
+        <FooterLink className={css.link} to="https://www.twitter.com">
+          <FaTwitter className={css.icon} /> {layout.desktopMd && "Twitter"}
         </FooterLink>
       </div>
     </footer>
