@@ -275,7 +275,7 @@ export default function PageHome() {
 
           <div ref={elsRef} className={css.els}>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={"../../assets/imgs/players/zidane-headshot.png"} className={css.player} />
             </div>
             <div className={css.el}>
               <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
