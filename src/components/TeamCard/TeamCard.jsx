@@ -2,6 +2,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import css from "./TeamCard.module.scss";
+import trophyImg from "../../assets/imgs/trophy.png";
 
 export default function TeamCard({ className, gradient, img, name, titles }) {
   const [isHover, setIsHover] = useState(false);
@@ -21,12 +22,7 @@ export default function TeamCard({ className, gradient, img, name, titles }) {
 
       <div className={css.titles}>
         {titles.map((i, idx) => (
-          <img
-            key={idx}
-            className={css.trophy}
-            src="/src/assets/imgs/trophy.png"
-            alt={titles.length + "titles"}
-          />
+          <img key={idx} className={css.trophy} src={trophyImg} alt={titles.length + "titles"} />
         ))}
 
         <div
