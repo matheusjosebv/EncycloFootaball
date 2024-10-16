@@ -1,42 +1,51 @@
+import argentinaFlag from "../assets/imgs/flags/argentina.png";
+import brazilFlag from "../assets/imgs/flags/brazil.png";
+import germanyFlag from "../assets/imgs/flags/germany.png";
+import franceFlag from "../assets/imgs/flags/france.png";
+import englandFlag from "../assets/imgs/flags/england.png";
+import spainFlag from "../assets/imgs/flags/spain.png";
+import uruguayFlag from "../assets/imgs/flags/uruguay.png";
+import italyFlag from "../assets/imgs/flags/italy.png";
+
 const nationalTeamsList = [
   {
-    name: "Brazil",
-    img: "../assets/imgs/flags/brazil.png",
+    name: "brazil",
+    img: brazilFlag,
     titles: [1958, 1962, 1970, 1994, 2002],
   },
   {
-    name: "Germany",
-    img: "../assets/imgs/flags/germany.png",
+    name: "germany",
+    img: germanyFlag,
     titles: [1954, 1974, 1990, 2014],
   },
   {
-    name: "Italy",
-    img: "../assets/imgs/flags/italy.png",
+    name: "italy",
+    img: italyFlag,
     titles: [1934, 1938, 1982, 2006],
   },
   {
-    name: "Argentina",
-    img: "../assets/imgs/flags/argentina.png",
+    name: "argentina",
+    img: argentinaFlag,
     titles: [1978, 1986, 2022],
   },
   {
-    name: "Uruguay",
-    img: "../assets/imgs/flags/uruguay.png",
+    name: "uruguay",
+    img: uruguayFlag,
     titles: [1930, 1950],
   },
   {
-    name: "France",
-    img: "../assets/imgs/flags/france.png",
+    name: "france",
+    img: franceFlag,
     titles: [1998, 2018],
   },
   {
-    name: "England",
-    img: "../assets/imgs/flags/england.png",
+    name: "england",
+    img: englandFlag,
     titles: [1966],
   },
   {
-    name: "Spain",
-    img: "../assets/imgs/flags/spain.png",
+    name: "spain",
+    img: spainFlag,
     titles: [2010],
   },
 ];

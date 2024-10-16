@@ -20,6 +20,8 @@ import momentImg from "../../assets/imgs/legendary-moment-1.webp";
 import aboutImg1 from "../../assets/imgs/materazzi-e-rui-costa.jpeg";
 import aboutImg2 from "../../assets/imgs/Best-soccer-celebrations.jpeg";
 import aboutImg3 from "../../assets/imgs/david-pisnoy-At5I1OSl_2M-unsplash.jpg";
+import zidanePhoto from "../../assets/imgs/players/zidane-headshot.png";
+import fieldPhoto from "../../assets/imgs/field.png";
 // ICONS
 import { MdStadium } from "react-icons/md";
 import { IoMdFootball } from "react-icons/io";
@@ -271,44 +273,44 @@ export default function PageHome() {
         <h1>Squad Builder</h1>
 
         <div className={css.field} ref={fieldRef}>
-          <img ref={imgRef} className={css.img} src="/src/assets/imgs/field.png" />
+          <img ref={imgRef} className={css.img} src={fieldPhoto} />
 
           <div ref={elsRef} className={css.els}>
             <div className={css.el}>
-              <img src={"../../assets/imgs/players/zidane-headshot.png"} className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
             <div className={css.el}>
-              <img src="../../assets/imgs/players/zidane-headshot.png" className={css.player} />
+              <img src={zidanePhoto} className={css.player} />
             </div>
           </div>
         </div>
